@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['webdev-django-blog.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ["webdev-django-blog.herokuapp.com", "localhost"]
 
 
 # Application definition
@@ -94,7 +94,7 @@ DATABASES = {
 
 
 
-#Password validation
+
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [

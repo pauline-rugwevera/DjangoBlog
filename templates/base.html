@@ -29,16 +29,17 @@
         <li class="nav-item">
           <a class="nav-link active" href="#">{{request.user}}</a>
         </li>
+       
         <li class="nav-item">
-          <a class="nav-link" href="/logout/">Logout</a>
+          <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link  {% block registeractive %} {% endblock registeractive %}" href="/register/">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {% block loginactive %} {% endblock loginactive %}" href="/login/">Login</a>
-        </li>
+          <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+      </li>
         {% endif %}
 
 
@@ -50,6 +51,9 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% block content %}
+  <!-- Content Goes here -->
+  {% endblock content %}
 </body>
 
 </html>

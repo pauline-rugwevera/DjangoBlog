@@ -3,13 +3,33 @@
 
 {% block content%}
 
-<h1>hh</h1>
+
+
+<div class="container">
+  <div class="row">
+    {% for post in object_list %}
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <div class="card shadow" style="width: 20rem; height: 33rem;">
+        <img src=" {{ post.image.url }}" alt="">
+        <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
+        <p class="card-text" style="font-size: 15px"></p>
+        <a href="blog/{{post.slug}}" class="btn btn-primary">Read More {% if user.is_superuser %}<a href="delete_blog_post/{{post.slug}}/" class="btn btn-danger mx-4">Delete Blog</a>{% endif %}</a>
+     
+       
+        
+
+
+
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+
+</div>
 
 
 {% endblock %}
 
 
 
-<!-- {% block js %} 
-<script></script>
-{% endblock %} -->

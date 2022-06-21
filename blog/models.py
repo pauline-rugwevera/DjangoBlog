@@ -19,10 +19,9 @@ class Profile:
 class BlogPost(models.Model):
     title = models.CharField(max_length=250, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    slug = models.CharField(max_length=150)
+    slug = models.SlugField(max_length=130, unique=True)
     content = models.TextField()
     image = CloudinaryField('image', default='placeholder')
-    # post_id = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.author) + " Blog Title: " + self.title

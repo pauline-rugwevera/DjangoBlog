@@ -1,15 +1,17 @@
 from django.shortcuts import render
-
-# from django.views import generic
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import BlogPost
 
-# class PostList(generic.ListView):
-#     model = BlogPost
-#     queryset = BlogPost.objects
-#     template_name = 'blog.html'
 class PostList(ListView):
     model = BlogPost
     template_name = 'blog.html'
+    
+
+class Create(CreateView):
+    model = BlogPost
+    fields = ('title', 'author', 'slug', 'content', 'image')
+    template_name = 'create.html'
+
+
 
 

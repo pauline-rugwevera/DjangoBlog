@@ -1,20 +1,14 @@
 from django.urls import path
 
-from .views import PostList
+from .views import PostList, Create
+
 
 urlpatterns = [
 
     path('', PostList.as_view(), name="home"),
-]
+    path('create/', Create.as_view(), name="create"),
 
-# from django.contrib import admin
-# from django.urls import path, include
-
-
-# urlpatterns = [
-#   path('admin/', admin.site.urls),
-#   path('', include('blog.urls')),
-#   path('summernote/', include('django_summernote.urls')),
-#   path('accounts/', include('allauth.urls')),
- 
-# ]
+    # path('blog_comments/<str:slug>/', PostDetail.as_view(),
+    #      name="blog_comments"),
+    
+ ]

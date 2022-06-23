@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 
 class Profile:
@@ -25,6 +26,9 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return str(self.author) + " Blog Title: " + self.title
+
+    def get_absolute_url(self):
+        return reverse('home')
 
 
 

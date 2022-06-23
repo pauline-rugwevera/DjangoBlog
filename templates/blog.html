@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block css %}
+
+{% endblock %}
 
 
 {% block content%}
@@ -11,12 +14,20 @@
     <div class="col-lg-4 col-md-4 col-sm-6">
       <div class="card shadow" style="width: 20rem; height: 33rem;">
         <img src=" {{ post.image.url }}" alt="">
-        <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
-        <p class="card-text" style="font-size: 15px"></p>
-        <a href="blog/{{post.slug}}" class="btn btn-primary">Read More {% if user.is_superuser %}<a href="delete_blog_post/{{post.slug}}/" class="btn btn-danger mx-4">Delete Blog</a>{% endif %}</a>
-     
        
-        
+        <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
+        <p class="card-text">{{post.content| truncatechars:210}}</p>
+
+        <a href="blog_comments/{{post.slug}}" class="btn btn-primary">Read More</a>
+
+   
+          
+
+
+
+
+
+
 
 
 
@@ -30,6 +41,3 @@
 
 
 {% endblock %}
-
-
-

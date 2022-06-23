@@ -6,6 +6,7 @@ from .forms import BlogPostForm
 class PostList(ListView):
     model = BlogPost
     template_name = 'blog.html'
+  
     
 
 class Create(CreateView):

@@ -6,17 +6,19 @@
 
 {% block content%}
 
+<!-- <h1 id="first-header">Learn or Share Your Web Development Journey With Us</h1> -->
 
 
 <div class="container">
+ 
   <div class="row">
     {% for post in object_list %}
-    <div class="col-lg-4 col-md-4 col-sm-6">
-      <div class="card shadow" style="width: 20rem; height: 33rem;">
+    <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="card shadow image-shadow" >
         <img src=" {{ post.image.url }}" alt="">
        
         <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
-        <p class="card-text">{{post.content| truncatechars:210}}</p>
+        <p class="card-text">{{post.content| truncatechars:100}}</p>
 
         <a href="blog_comments/{{post.slug}}" class="btn btn-primary">Read More</a>
 

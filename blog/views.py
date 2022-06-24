@@ -16,5 +16,10 @@ class Create(CreateView):
     template_name = 'create.html'
 
 
+class PostDetailedView(DetailView):
+    model = BlogPost
+    template_name = 'post_detail.html'
+
+
 
 

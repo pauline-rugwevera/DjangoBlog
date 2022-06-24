@@ -20,7 +20,8 @@
         <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
         <p class="card-text">{{post.content| truncatechars:100}}</p>
 
-        <a href="blog_comments/{{post.slug}}" class="btn btn-primary">Read More</a>
+        <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">Read More</a>
+        <!-- <a href="post_detail/{{post.slug}}" class="btn btn-primary">Read More</a> -->
 
    
           

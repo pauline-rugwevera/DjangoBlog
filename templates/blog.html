@@ -1,38 +1,30 @@
 {% extends 'base.html' %}
-{% block css %}
-
-{% endblock %}
+<!-- {% load static % } -->
 
 
-{% block content%}
 
-<!-- <h1 id="first-header">Learn or Share Your Web Development Journey With Us</h1> -->
-
+{% block content %}
 
 <div class="container">
- 
+
   <div class="row">
     {% for post in object_list %}
-    <div class="col-lg-4 col-md-6 col-sm-6">
-      <div class="card shadow image-shadow" >
+    <div class="col-lg-4 col-md-6 col-sm-6" style="width: 20rem; height: 33rem;">
+      <div class="card shadow image-shadow">
         <img src=" {{ post.image.url }}" alt="">
-       
+
         <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
         <p class="card-text">{{post.content| truncatechars:100}}</p>
 
-        <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">Read More</a>
-        <!-- <a href="post_detail/{{post.slug}}" class="btn btn-primary">Read More</a> -->
-
-   
-          
-
+        
+          <a href="{% url 'post-detail' post.pk %}"  class="btn btn-primary btns">READ MORE</a>
+          <a href="{% url 'update-post' post.pk %}"  class="btn btn-primary btns">Edit Post</a>
+     
 
 
 
 
-
-
-
+       
 
       </div>
     </div>
@@ -40,7 +32,12 @@
     {% endfor %}
   </div>
 
-</div>
 
 
-{% endblock %}
+
+
+  
+ </div>
+
+
+  {% endblock content %}

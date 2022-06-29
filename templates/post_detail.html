@@ -1,12 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>the whole post is here</h1>
+
+<div class="container">
+    <h5>{{ object.title }}</h5>
+    <br>
+
+    <img src="" alt="" height="250px" width="500px">
+    <br>
+    <p>{{object.content}}</p>
+    <hr>
+
+    <br>
+    <h2>Comments</h2>
 
 
-{% block content%}
-
-<h5>{{ object.title }}</h5>
+    <a href="">Add comments</a>
 
 
 
 
 
-{% endblock %}
+
+    {% endblock content %}

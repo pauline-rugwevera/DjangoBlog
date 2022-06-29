@@ -5,14 +5,28 @@
 body {
     font-family: 'Open Sans', sans-serif;
     color: #000;
+
   
   }
+ 
 
-p.card-text{
-   padding: 7px;
+  p.card-text{
+    padding: 7px;
+ }
+
+ .image-shadow{
+  margin: 15px;
+  width: 20rem;
+  height: 30rem;
 }
-.image-shadow{
-    margin: 15px;
-    width: 20rem;
-    height: 25rem;
+.btns{
+ 
+  width: 151px;
+  height: 45px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.edit{
+ margin-right: 0;
 }

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DetailView, UpdateView
 
 from .models import BlogPost
-from .forms import BlogPostForm
+from .forms import BlogPostForm, EditPostForm
 
 class PostList(ListView):
     model = BlogPost
@@ -23,7 +23,8 @@ class PostDetailedView(DetailView):
 class UpdatePost(UpdateView):
     model = BlogPost
     template_name = 'edit_post.html'
-    fields = ['title', 'slug', 'content']
+    form_class = EditPostForm
+    # fields = ['title', 'slug', 'content']
 
 
 

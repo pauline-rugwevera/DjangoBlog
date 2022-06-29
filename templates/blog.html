@@ -16,15 +16,20 @@
         <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
         <p class="card-text">{{post.content| truncatechars:100}}</p>
 
-        
-          <a href="{% url 'post-detail' post.pk %}"  class="btn btn-primary btns">READ MORE</a>
-          <a href="{% url 'update-post' post.pk %}"  class="btn btn-primary btns">Edit Post</a>
-     
 
-
-
-
+        <a href="{% url 'post-detail' post.pk %}" >READ MORE</a>
+        {% if user.is_authenticated %}
+        {% if user.id == post.author.id %}
+        <a href="{% url 'update-post' post.pk %}">Edit Post</a>
+        {% endif %}
+        {% endif %}
        
+
+
+
+
+
+
 
       </div>
     </div>
@@ -36,8 +41,8 @@
 
 
 
-  
- </div>
+
+</div>
 
 
-  {% endblock content %}
+{% endblock content %}

@@ -8,25 +8,46 @@
 <div class="container w-75 my-4">
     <h2 class="blog-post-title">{{post.title}}</h2>
     <br>
-    <div class="media">
 
-        <div class="media-body">
-            <h5 class="mt-0">by {{post.author}}
-                {% if user.is_authenticated %}
-                {% if user.id == post.author.id %}
-                <small><a href="/edit_blog_post/{{post.slug}}/" class="edit btn btn-warning">Edit Blog Post</a></small>
-                {% endif %}
-                {% endif %}
-            </h5>
-         
-        </div>
-    </div>
+    <h5>{{post.author}}
+
+    </h5>
     <br>
     <img src="{{ post.image.url }}" alt="" height="250px" width="500px">
     <br>
+
     <p>{{post.content}}.</p>
     <hr>
-   
-    </div>
+    {% if user.is_authenticated %}
 
-    {% endblock content %}
+    <div class="container">
+        <h4>Add Comments Here</h4>
+        <form action="/blog/{{post.slug}}/" method="POST"> {% csrf_token %}
+    <div class="form-floating">
+        <textarea class="form-control" id="exampleFormControlInput1" name="text"
+            placeholder="Leave a comment here"></textarea>
+
+        <label for="exampleFormControlInput1">Leave your comment here</label>
+        <br>
+        <button type="submit" class="btn btn-primary">Comment</button>
+    </div>
+    </form>
+    {% else %}
+    <h4><a href="/accounts/login">Login to comment </a></h4>
+    {% endif %}
+    <br>
+    
+    <h4>All Comments</h4>
+  
+
+
+
+
+
+    <hr>
+
+
+
+</div>
+
+{% endblock content %}

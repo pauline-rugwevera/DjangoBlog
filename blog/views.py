@@ -36,13 +36,13 @@ class UpdatePost(UpdateView):
 def post_detail(request, slug):
     post = BlogPost.objects.filter(slug=slug).first()
     comments = Comment.objects.filter(blog_id=post)
-    if request.method=="POST":
+    if request.method =="POST":
         user = request.user
         content = request.POST.get('content','')
-        blog_id =request.POST.get('blog_id','')
+        blog_id = request.POST.get('blog_id','')
         comment = Comment(user = user, content = content, blog_id=post)
         comment.save()
-    return render(request, "post_detail.html", {'post': post, 'comments': comments, })
+    return render(request, "post_detail.html", {'post': post,'comments':comments,})
 
 
 

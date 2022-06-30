@@ -1,27 +1,32 @@
 {% extends 'base.html' %}
-{% load static %}
+
+{% block title %} Blogs {% endblock %}
+
 
 {% block content %}
-<h1>the whole post is here</h1>
 
-<div class="container">
-    <h5>{{ object.title }}</h5>
+<div class="container w-75 my-4">
+    <h2 class="blog-post-title">{{post.title}}</h2>
     <br>
+    <div class="media">
 
-    <img src="" alt="" height="250px" width="500px">
+        <div class="media-body">
+            <h5 class="mt-0">by {{post.author}}
+                {% if user.is_authenticated %}
+                {% if user.id == post.author.id %}
+                <small><a href="/edit_blog_post/{{post.slug}}/" class="edit btn btn-warning">Edit Blog Post</a></small>
+                {% endif %}
+                {% endif %}
+            </h5>
+         
+        </div>
+    </div>
     <br>
-    <p>{{object.content}}</p>
+    <img src="{{ post.image.url }}" alt="" height="250px" width="500px">
+    <br>
+    <p>{{post.content}}.</p>
     <hr>
-
-    <br>
-    <h2>Comments</h2>
-
-
-    <a href="">Add comments</a>
-
-
-
-
-
+   
+    </div>
 
     {% endblock content %}

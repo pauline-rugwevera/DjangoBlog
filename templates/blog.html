@@ -13,17 +13,25 @@
       <div class="card shadow image-shadow">
         <img src=" {{ post.image.url }}" alt="">
 
-        <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
+        <h5 class="card-title">{{post.title}}
+          <br>
+          <small>
+            {{post.author}}
+            {{ post.dateTime}}
+
+          </small>
+        </h5>
         <p class="card-text">{{post.content| truncatechars:100}}</p>
 
 
-        <a href="{% url 'post-detail' post.pk %}" >READ MORE</a>
+      
+        <a href="blog/{{post.slug}}" class="btn btn-primary">Read More</a>
         {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
-        <a href="{% url 'update-post' post.pk %}">Edit Post</a>
+        <a href="{% url 'update-post' post.pk %}" class="btn btn-warning">Edit Post</a>
         {% endif %}
         {% endif %}
-       
+
 
 
 

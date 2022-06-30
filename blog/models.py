@@ -23,6 +23,7 @@ class BlogPost(models.Model):
     slug = models.SlugField(max_length=130, unique=True)
     content = models.TextField()
     image = CloudinaryField('image', default='placeholder')
+ 
 
     def __str__(self):
         return str(self.author) + " Blog Title: " + self.title
@@ -38,4 +39,4 @@ class Comment(models.Model):
     blog_id = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user.username +  " Comment: " + self.content
+        return self.user + " Comment: " + self.content

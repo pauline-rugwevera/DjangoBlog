@@ -39,4 +39,4 @@ class Comment(models.Model):
     blog_id = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.user + " Comment: " + self.content
+        return self.user.username + " Comment: " + self.content

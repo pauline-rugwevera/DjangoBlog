@@ -5,6 +5,8 @@
 body {
     font-family: 'Open Sans', sans-serif;
     color: #000;
+    background-color: #F0EBE3;
+   
 
   
   }
@@ -29,4 +31,26 @@ body {
 }
 .edit{
  margin-right: 0;
+}
+
+.colour{
+  background-color: white;
+  color: #000;
+
+}
+
+a {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 2px;
+  color: #000;
+  list-style-type: none;
+  font-size: 23px;
+  font-weight: bold;
+
+}
+.logo{
+  font-family: 'Lato', sans-serif;
+  color: #000;
+  font-weight: bold;
+  font-size: 23px;
 }

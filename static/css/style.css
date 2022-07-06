@@ -3,37 +3,47 @@
 
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    color: #000;
-    background-color: #F0EBE3;
-   
+  font-family: 'Open Sans', sans-serif;
+  color: #000;
+  background-color: #F0EBE3;
+}
 
-  
-  }
- 
+.logo {
+  font-family: 'Lato', sans-serif;
+  color: #000;
+  font-weight: bold;
+  font-size: 23px;
+}
 
-  p.card-text{
-    padding: 7px;
- }
+.black {
+  color: #000;
+}
 
- .image-shadow{
+
+p.card-text {
+  padding: 7px;
+}
+
+.image-shadow {
   margin: 15px;
   width: 20rem;
   height: 30rem;
 }
-.btns{
- 
+
+.btns {
+
   width: 151px;
   height: 45px;
   text-decoration: none;
   cursor: pointer;
   border-radius: 4px;
 }
-.edit{
- margin-right: 0;
+
+.edit {
+  margin-right: 0;
 }
 
-.colour{
+.colour {
   background-color: white;
   color: #000;
 
@@ -48,12 +58,27 @@ a {
   font-weight: bold;
 
 }
-.logo{
-  font-family: 'Lato', sans-serif;
-  color: #000;
-  font-weight: bold;
-  font-size: 23px;
+
+#image-container{
+  height: 300px;
+  /* width: 600px;  */
+
 }
-.black{
-  color: #000;
+img{
+  height:250px;
+  /* width:500px; */
+  object-fit: cover;
+ 
+}
+
+p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+}
+h2,h3,h5{
+  font-family: 'Open Sans', sans-serif;
+}
+.login{
+  font-family: 'Open Sans', sans-serif;
 }

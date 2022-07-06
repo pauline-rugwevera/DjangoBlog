@@ -1,21 +1,27 @@
 from django.shortcuts import render, redirect, HttpResponse
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.contrib import messages
 
+from django.contrib.messages.views import SuccessMessageMixin
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import BlogPost, Comment
 from .forms import BlogPostForm, EditPostForm, CommentForm
-
 from django.urls import reverse_lazy
 
+# read post
 class PostList(ListView):
     model = BlogPost
     template_name = 'blog.html'
     ordering = ['-id']
     
-
-class Create(CreateView):
+# create post
+class Create(SuccessMessageMixin, CreateView):
     model = BlogPost
     form_class = BlogPostForm
     template_name = 'create.html'
+    success_message = 'Post successfully created'
+  
+    
+
 
 
 # class PostDetailedView(DetailView):
@@ -25,20 +31,27 @@ class Create(CreateView):
 #     slug_field = 'slug'
 
    
-
-class UpdatePost(UpdateView):
+# update post
+class UpdatePost(SuccessMessageMixin, UpdateView):
     model = BlogPost
     template_name = 'edit_post.html'
     form_class = EditPostForm
+    success_message = 'Post successfully updated'
     # fields = ['title', 'slug', 'content']
 
-
-class DeletePost(DeleteView):
+# delete post
+class DeletePost(SuccessMessageMixin, DeleteView):
     model = BlogPost
     template_name = 'delete_post.html'
-    success_url = reverse_lazy('home')    
+    success_url = reverse_lazy('home') 
+    success_message = "Post has been successfully deleted"
+
+    def delete(self, request, *args, **kwargs):
+        messages.success(self.request, self.success_message)
+        return super(DeletePost, self).delete(request, *args, **kwargs)
 
 
+# display detailed post,add comments
 def post_detail(request, slug):
     post = BlogPost.objects.filter(slug=slug).first()
     comments = Comment.objects.filter(blog_id=post)

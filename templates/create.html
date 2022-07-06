@@ -14,4 +14,19 @@
         </form>
     </div>
 </div>
-{% endblock content %}
+
+
+
+<!-- messages -->
+{% if messages %}
+<div class="alert alert-success">
+    {% for m in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ m }}</li>
+        {% endfor %}
+</div>
+{% endif %}
+
+
+
+
+        {% endblock content %}

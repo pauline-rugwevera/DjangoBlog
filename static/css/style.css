@@ -5,7 +5,11 @@
 body {
   font-family: 'Open Sans', sans-serif;
   color: #000;
-  background-color: #F0EBE3;
+  
+  /* background-color: #F0EBE3; */
+  background-color: red;
+  width: 100vw;
+  height: 100vh;
 }
 
 .logo {
@@ -81,4 +85,27 @@ h2,h3,h5{
 }
 .login{
   font-family: 'Open Sans', sans-serif;
+}
+
+#login,#logout,#delete,#register{
+  position: relative;
+  width: 100vw;
+  height: 82vh;
+
+}
+.blue{
+ background-color: #1e88e5;
+ position: relative;
+ padding-bottom: 0;
+}
+#delete-post{
+  text-align: center;
+}
+.card-title{
+  text-align: center;
+}
+.delete-btn{
+margin: auto 0;
+float: left;
+margin-left: 50px;
 }

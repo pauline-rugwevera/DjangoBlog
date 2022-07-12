@@ -63,8 +63,13 @@ def post_detail(request, slug):
         comment.save()
     return render(request, "post_detail.html", {'post': post,'comments':comments})
 
+# show user profile
+def user_profile(request, myid):
+    post = BlogPost.objects.filter(id=myid)
+    return render(request, "user_profile.html", {'post':post})
 
-
+def Profile(request):
+    return render(request, "profile.html")
 
 
 

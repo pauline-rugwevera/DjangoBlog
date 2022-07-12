@@ -12,5 +12,9 @@ urlpatterns = [
     path('blog/<str:slug>/', views.post_detail, name="post-detail"),
     path('post/<int:pk>/delete', DeletePost.as_view(), name="delete-post"),
 
+    # profile
+    path("profile/", views.Profile, name="profile"),
+    path("user_profile/<int:myid>/", views.user_profile, name="user_profile"),
+
 
 ]

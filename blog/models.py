@@ -5,10 +5,9 @@ from cloudinary.models import CloudinaryField
 from django.urls import reverse
 
 
-class Profile:
+class Profile (models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True,
                                 null=True)
-    image = CloudinaryField('image', default='placeholder')
     bio = models.TextField(blank=True, null=True)
     linkedin = models.CharField(max_length=300, blank=True, null=True)
     Twitter = models.CharField(max_length=300, blank=True, null=True)

@@ -11,7 +11,7 @@
     <div class="media">
 
         <div class="media-body">
-            <h5>by {{post.author}}
+            <h5><a href="/user_profile/{{post.author.id}}/"> by {{post.author}}</a> 
                 {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
                 <small><a href="{% url 'delete-post' post.pk %}" class="btn btn-danger">Delete Post</a></small>

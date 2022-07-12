@@ -6,8 +6,8 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #000;
   
-  /* background-color: #F0EBE3; */
-  background-color: red;
+  background-color: #F0EBE3;
+  /* background-color: red; */
   width: 100vw;
   height: 100vh;
 }

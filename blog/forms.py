@@ -1,5 +1,5 @@
 from django import forms
-from .models import BlogPost, Comment
+from .models import BlogPost, Comment, Profile
 
 
 class BlogPostForm(forms.ModelForm):
@@ -36,3 +36,15 @@ class CommentForm(forms.ModelForm):
         #     'content': forms.Textarea(attrs={'class':'form-control', 'placeholder':'Content of the Blog'}),
         # }
 
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ('linkedin', 'bio', 'Twitter',)
+
+        widgets = {
+            'linkedin': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Title of the Blog'}),
+          
+            'bio': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Copy the title with no space and a hyphen in between'}),
+            'Twitter': forms.Textarea(attrs={'class':'form-control', 'placeholder':'Content of the Blog'}),
+        }

@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 
+
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from .models import BlogPost, Comment
-from .forms import BlogPostForm, EditPostForm, CommentForm
+from .models import BlogPost, Comment, Profile
+from .forms import BlogPostForm, EditPostForm, CommentForm, ProfileForm
 from django.urls import reverse_lazy
+
+# from django.contrib.auth.forms import UserChangeForm
 
 # read post
 class PostList(ListView):
@@ -21,7 +24,12 @@ class Create(SuccessMessageMixin, CreateView):
     success_message = 'Post successfully created'
   
     
-
+# class EditUserView(UpdateView):
+#     model = Profile
+#     form_class = ProfileForm
+#     template_name = 'edit_profile.html'
+#     success_url = reverse_lazy('home') 
+#     success_message = 'Post successfully created'
 
 
 # class PostDetailedView(DetailView):
@@ -34,10 +42,20 @@ class Create(SuccessMessageMixin, CreateView):
 # update post
 class UpdatePost(SuccessMessageMixin, UpdateView):
     model = BlogPost
-    template_name = 'edit_post.html'
+    template_name = 'edit_profile.html'
     form_class = EditPostForm
     success_message = 'Post successfully updated'
     # fields = ['title', 'slug', 'content']
+
+
+# edit user profile
+# class EditUserView(CreateView):
+#     model = Profile
+#     form_class = ProfileForm
+#     template_name = 'edit_profile.html'
+#     success_url = reverse_lazy('home') 
+#     success_message = 'Post successfully created'
+
 
 # delete post
 class DeletePost(SuccessMessageMixin, DeleteView):
@@ -72,7 +90,10 @@ def Profile(request):
     return render(request, "profile.html")
 
 
-
-
-
-
+def search(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        post = BlogPost.objects.filter(title__contains=searched)
+        return render(request, "search.html", {'searched':searched, 'post':post})
+    else:
+        return render(request, "search.html", {})

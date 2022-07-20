@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
-<!-- {% load static % } -->
+{% load static % }
 
 
 
 {% block content %}
 
-<div class="container">
+<div class="container mt-5 mb-3">
 
   <div class="row">
     {% for post in object_list %}
-    <div class="col-lg-4 col-md-6 col-sm-6" style="width: 20rem; height: 33rem;">
-      <div class="card shadow image-shadow">
-        <img src=" {{ post.image.url }}" alt="">
+    <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="card shadow image-shadow"  style="width: 20rem; height: 33rem;">
+        <img src=" {{ post.image.url }}" alt="" height="250px">
 
         <h5 class="card-title">{{post.title}}
           <br>
@@ -22,7 +22,8 @@
         </h5>
         <p class="card-text">{{post.content| truncatechars:100}}</p>
         <a href="blog/{{post.slug}}" class="btn btn-primary">Read More</a>
-        {% if user.is_authenticated %}
+        
+         {% if user.is_authenticated %}
         {% if user.id == post.author.id %}
         <a href="{% url 'update-post' post.pk %}" class="btn btn-warning">Edit Post</a>
         {% endif %}
@@ -40,6 +41,20 @@
 
 
 </div>
+ 
 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
 {% endblock content %}

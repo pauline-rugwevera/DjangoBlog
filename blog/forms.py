@@ -1,5 +1,5 @@
 from django import forms
-from .models import BlogPost, Comment, Profile
+from .models import BlogPost
 
 
 class BlogPostForm(forms.ModelForm):
@@ -7,12 +7,16 @@ class BlogPostForm(forms.ModelForm):
         model = BlogPost
         fields = ('title', 'author', 'slug', 'content', 'image')
         widgets = {
-            'title': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Title of the Blog'}),
-          
-            'slug': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Copy the title with no space and a hyphen in between'}),
-            'content': forms.Textarea(attrs={'class':'form-control', 'placeholder':'Content of the Blog'}),
+            'title': forms.TextInput
+            (attrs={'class': 'form-control', 'placeholder':
+                                             'Post Title'}),
+            'slug': forms.TextInput
+            (attrs={'class': 'form-control',
+             'placeholder':
+                    'Copy the title with no space and a hyphen in between'}),
+            'content': forms.Textarea(attrs={'class': 'form-control',
+                                             'placeholder': 'post content'}),
         }
-
 
 
 class EditPostForm(forms.ModelForm):
@@ -20,31 +24,13 @@ class EditPostForm(forms.ModelForm):
         model = BlogPost
         fields = ('title', 'slug', 'content', 'image')
         widgets = {
-            'title': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Title of the Blog'}),
-          
-            'slug': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Copy the title with no space and a hyphen in between'}),
-            'content': forms.Textarea(attrs={'class':'form-control', 'placeholder':'Content of the Blog'}),
-        }
-
-class CommentForm(forms.ModelForm):
-    class Meta:
-        model = Comment
-        fields = ('content',)
-        # widgets = {
-          
-        #     'user': forms.TextInput(attrs={'class':'form-control'}),
-        #     'content': forms.Textarea(attrs={'class':'form-control', 'placeholder':'Content of the Blog'}),
-        # }
-
-
-class ProfileForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = ('linkedin', 'bio', 'Twitter',)
-
-        widgets = {
-            'linkedin': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Title of the Blog'}),
-          
-            'bio': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Copy the title with no space and a hyphen in between'}),
-            'Twitter': forms.Textarea(attrs={'class':'form-control', 'placeholder':'Content of the Blog'}),
+            'title': forms.TextInput
+            (attrs={'class': 'form-control',
+                             'placeholder': 'Post Title'}),
+            'slug': forms.TextInput
+            (attrs={'class': 'form-control',
+             'placeholder':
+                    'Copy the title with no space and a hyphen in between'}),
+            'content': forms.Textarea(attrs={'class': 'form-control',
+                                             'placeholder': 'post contentg'}),
         }

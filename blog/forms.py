@@ -15,7 +15,7 @@ class BlogPostForm(forms.ModelForm):
              'placeholder':
                     'Copy the title with no space and a hyphen in between'}),
             'content': forms.Textarea(attrs={'class': 'form-control',
-                                             'placeholder': 'post content'}),
+                                             'placeholder': 'Post contents'}),
         }
 
 
@@ -32,5 +32,5 @@ class EditPostForm(forms.ModelForm):
              'placeholder':
                     'Copy the title with no space and a hyphen in between'}),
             'content': forms.Textarea(attrs={'class': 'form-control',
-                                             'placeholder': 'post contentg'}),
+                                             'placeholder': 'Post contents'}),
         }

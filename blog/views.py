@@ -11,6 +11,7 @@ class PostList(ListView):
     model = BlogPost
     template_name = 'blog.html'
     ordering = ['-id']
+    paginate_by = 3
 
 
 class Create(SuccessMessageMixin, CreateView):

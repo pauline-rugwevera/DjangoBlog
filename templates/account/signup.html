@@ -8,19 +8,21 @@
 <div id="register" class="container">
   <div class="row justify-content-md-center">
     <div class="col-md-auto">
-      <h3>{% trans "Create an account here" %}</h3>
+    
+        <h3>{% trans "Create an account here" %}</h3>
 
-      <p>{% blocktrans %}Create an account below or <a href="{{ login_url }}">Log in here</a>.{% endblocktrans %}</p>
+        <p>{% blocktrans %}Create an account below or <a href="{{ login_url }}">Log in</a>.{% endblocktrans %}</p>
 
 
-      <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button class = "btn btn-primary" type="submit">{% trans "Sign Up" %} </button>
-      </form>
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+          {% csrf_token %}
+          {{ form.as_p }}
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="btn btn-primary" type="submit">{% trans "Sign Up" %} </button>
+        </form>
+      
 
     </div>
   </div>

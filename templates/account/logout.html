@@ -9,7 +9,7 @@
   <div class="row justify-content-md-center">
     <div class="col-md-auto">
 
-      <h3>{% trans "Sign Out" %}</h3>
+      <h3>{% trans "Log Out" %}</h3>
 
       <p>{% trans 'Are you sure you want to log out?' %}</p>
 
@@ -18,7 +18,8 @@
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class = "btn btn-primary" type="submit">{% trans 'Sign Out' %}</button>
+        <button class = "btn btn-primary" type="submit">{% trans 'Log Out' %}</button>
+        <a href="/" class="btn btn-primary">Cancel</a>
       </form>
     </div>
   </div>

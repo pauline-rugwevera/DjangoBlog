@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Hubballi&family=Inspiration&family=Kavoon&family=Orelega+One&family=Roboto+Condensed:wght@300&family=Square+Peg&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto+Condensed:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
 
 
@@ -34,19 +36,16 @@ p.card-text {
 }
 
 .image-shadow {
-  margin: 15px;
-  width: 20rem;
-  height: 30rem;
+  /* margin: 15px; */
+  /* margin-right: 50px; */
+  width: 18rem;
+  height: 33rem;
 }
 
-/* .btns {
-
-  width: 151px;
-  height: 45px;
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 4px;
-} */
+.btn{
+  font-family: 'kavoon', sans-serif;
+  font-size: 20px;
+}
 
 
 .edit {
@@ -95,7 +94,7 @@ h2,h3,h5{
   font-family: 'Open Sans', sans-serif;
 }
 
-#login,#logout,#delete,#register{
+#login,#logout,#delete,#register,#search{
   position: relative;
   width: 100vw;
   height: 82vh;
@@ -110,10 +109,72 @@ h2,h3,h5{
   text-align: center;
 }
 .card-title{
-  text-align: center;
+text-align: center;
+
 }
+
 .delete-btn{
-margin: auto 0;
-float: left;
+
 margin-left: 50px;
 }
+
+.white{
+  color: #FFFFFF;
+}
+.footer-p a{
+  font-family: 'Lato', sans-serif;
+ 
+}
+
+/* media queries */
+
+
+  
+
+  
+  @media only screen and (max-width:1000px) {
+     .image-shadow{
+      width: 40rem;
+      margin:0 auto;
+     }
+    
+    }
+
+    @media only screen and (max-width:780px) {
+      .image-shadow{
+   width: 35rem;
+   margin:0 auto;
+   margin-top: 12px;
+   
+      }
+     
+     } 
+     @media only screen and (max-width:630px) {
+      .image-shadow{
+        width: 25rem;
+        margin:0 auto;
+        margin-top: 12px;
+  
+      }
+     
+     } 
+
+     @media only screen and (max-width:440px) {
+      .image-shadow{
+        width: 18rem;
+        margin:0 auto;
+        margin-top: 12px;
+  
+      }
+     
+     } 
+
+     @media only screen and (max-width:320px) {
+      .image-shadow{
+        width: 15rem;
+        margin:0 auto;
+        margin-top: 12px;
+  
+      }
+     
+     } 

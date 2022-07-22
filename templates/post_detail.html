@@ -7,14 +7,16 @@
     <!-- post title -->
     <h2 class="blog-post-title">{{post.title}}</h2>
     <br>
-    <!-- post titile,author and delete edit buttons -->
+    <!-- post title,author and delete edit buttons -->
     <div class="media">
         <div class="media-body">
             <h5><a href="{{post.author.id}}/"> by {{post.author}}</a>
                 {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
-                <a href="{% url 'update-post' post.pk %}" class="btn btn-warning">Edit Post</a>
-                <small><a href="{% url 'delete-post' post.pk %}" class="btn btn-danger">Delete Post</a></small>
+                <hr>
+                <a href="{% url 'update-post' post.pk %}" class="btn btn-primary">Edit Post</a>
+                <a href="{% url 'delete-post' post.pk %}" class="btn btn-danger">Delete Post</a>
+             
                 {% endif %}
                 {% endif %}
                 </a></h5>

@@ -58,8 +58,10 @@ def post_detail(request, slug):
 def search(request):
     if request.method == "POST":
         searched = request.POST['searched']
-        post = BlogPost.objects.filter(title__contains=searched)
+        post = BlogPost.objects.filter(title__icontains=searched)
         return render(request, "search.html",
                       {'searched': searched, 'post': post})
     else:
         return render(request, "search.html", {})
+
+

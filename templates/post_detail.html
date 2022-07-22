@@ -16,7 +16,7 @@
                 <hr>
                 <a href="{% url 'update-post' post.pk %}" class="btn btn-primary">Edit Post</a>
                 <a href="{% url 'delete-post' post.pk %}" class="btn btn-danger">Delete Post</a>
-             
+
                 {% endif %}
                 {% endif %}
                 </a></h5>
@@ -73,7 +73,6 @@
         </div>
     </div>
 
-
     <!--django messages -->
     {% if messages %}
     <div class="alert alert-success">
@@ -83,4 +82,4 @@
     </div>
     {% endif %}
 
-{% endblock content %}
+    {% endblock content %}

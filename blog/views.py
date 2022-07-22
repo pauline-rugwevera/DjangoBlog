@@ -63,5 +63,3 @@ def search(request):
                       {'searched': searched, 'post': post})
     else:
         return render(request, "search.html", {})
-
-

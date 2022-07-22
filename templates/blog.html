@@ -8,15 +8,14 @@
   <div class="row">
     {% for post in object_list %}
     <div class="col-lg-4 col-md-12 col-sm-12">
-
       <!-- image url -->
-
+      
       <div class="card shadow image-shadow">
 
         {% if 'placeholder' in post.image.url %}
-        <img src="https://res.cloudinary.com/dfvf6jlzb/image/upload/v1658332903/zckqp8ylve9ei8sza8pc.jpg" alt="">
+        <img src="https://res.cloudinary.com/dfvf6jlzb/image/upload/v1658332903/zckqp8ylve9ei8sza8pc.jpg" alt="fullstack placeholder image">
         {% else %}
-        <img src="{{ post.image.url }}" alt="post-image" height="250px">
+        <img src="{{ post.image.url }}" alt="post-image" >
         {% endif %}
         <!-- post title -->
         <h5 class="card-title">{{post.title}}
@@ -28,7 +27,7 @@
           </small>
         </h5>
         <!-- post content -->
-        <p class="card-text">{{post.content| truncatechars:100}}</p>
+        <p class="card-text">{{post.content| truncatechars:150}}</p>
         <a href="blog/{{post.slug}}" class="btn btn-primary">Read More</a>
 
       </div>
@@ -46,18 +45,16 @@
 
 {% if is_paginated %}
 <nav aria-label="Page navigation">
-  <ul class="pagination justify-content-center">
+  <ul class="pagination justify-content-center ">
     {% if page_obj.has_previous %}
-    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link previous">&laquo; PREV </a></li>
     {% endif %}
     {% if page_obj.has_next %}
-    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link next"> NEXT &raquo;</a></li>
 
     {% endif %}
   </ul>
 </nav>
 {% endif %}
-
-
 
 {% endblock content %}

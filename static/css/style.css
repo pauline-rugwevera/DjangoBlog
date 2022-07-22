@@ -9,8 +9,6 @@ body {
   color: #000;
   
   background-color: #F0EBE3;
-  /* background-color: red; */
- 
   width: 100vw;
   height: 100vh;
 }
@@ -36,15 +34,22 @@ p.card-text {
 }
 
 .image-shadow {
-  /* margin: 15px; */
-  /* margin-right: 50px; */
+ 
   width: 18rem;
   height: 33rem;
+ 
 }
 
 .btn{
   font-family: 'kavoon', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
+  
+  
+}
+.next{
+  font-size: 18px;
+  font-family: 'kavoon', sans-serif;
+  
 }
 
 
@@ -69,11 +74,6 @@ a {
 
 }
 
-#image-container{
-  height: 300px;
-  /* width: 600px;  */
-
-}
 img{
   height:250px;
  
@@ -136,6 +136,7 @@ margin-left: 50px;
      .image-shadow{
       width: 40rem;
       margin:0 auto;
+     
      }
     
     }
@@ -144,7 +145,7 @@ margin-left: 50px;
       .image-shadow{
    width: 35rem;
    margin:0 auto;
-   margin-top: 12px;
+   margin-top: 28px;
    
       }
      
@@ -153,7 +154,7 @@ margin-left: 50px;
       .image-shadow{
         width: 25rem;
         margin:0 auto;
-        margin-top: 12px;
+        margin-top: 28px;
   
       }
      
@@ -163,7 +164,7 @@ margin-left: 50px;
       .image-shadow{
         width: 18rem;
         margin:0 auto;
-        margin-top: 12px;
+        margin-top: 28px;
   
       }
      
@@ -173,7 +174,7 @@ margin-left: 50px;
       .image-shadow{
         width: 15rem;
         margin:0 auto;
-        margin-top: 12px;
+        margin-top: 28px;
   
       }
      

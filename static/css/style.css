@@ -29,10 +29,6 @@ body {
 }
 
 
-p.card-text {
-  padding: 7px;
-}
-
 .image-shadow {
  
   width: 18rem;
@@ -85,10 +81,11 @@ p{
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 30px;
+  padding: 10px;
 }
 h2,h3,h5{
   font-family: 'Open Sans', sans-serif;
-  font-size: 22px;
+  font-size: 20px;
 }
 .login{
   font-family: 'Open Sans', sans-serif;

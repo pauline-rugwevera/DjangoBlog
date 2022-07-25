@@ -9,4 +9,4 @@ admin.site.register(Profile)
 @admin.register(BlogPost)
 class BlogPostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = 'content'
+    summernote_fields = ('content')

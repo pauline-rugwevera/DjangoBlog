@@ -27,7 +27,7 @@
           </small>
         </h5>
         <!-- post content -->
-        <p class="card-text">{{post.content| truncatechars:150}}</p>
+        <p class="contents">{{post.content| truncatechars:150|safe }}</p>
         <a href="blog/{{post.slug}}" class="btn btn-primary">Read More</a>
 
       </div>

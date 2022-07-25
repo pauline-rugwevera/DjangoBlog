@@ -27,14 +27,14 @@
     <!--image url -->
     <div id="image-container">
         {% if 'placeholder' in post.image.url %}
-        <img src="https://res.cloudinary.com/dfvf6jlzb/image/upload/v1658332903/zckqp8ylve9ei8sza8pc.jpg" alt="">
+        <img src="https://res.cloudinary.com/dfvf6jlzb/image/upload/v1658332903/zckqp8ylve9ei8sza8pc.jpg" alt="full-stack placeholder">
         {% else %}
         <img src="{{ post.image.url }}" alt="post-image">
         {% endif %}
     </div>
     <!-- post content -->
 
-    <p>{{post.content}}.</p>
+    <p>{{ post.content|safe }}.</p>
     <hr>
     <!-- add comments if authenticated -->
 

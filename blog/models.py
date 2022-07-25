@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 
 class Profile (models.Model):
@@ -16,7 +17,7 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=250, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=130, unique=True)
-    content = models.TextField()
+    content = RichTextField(blank=True, null=True)
     image = CloudinaryField('image', default='placeholder')
 
     def __str__(self):

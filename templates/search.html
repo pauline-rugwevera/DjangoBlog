@@ -10,8 +10,8 @@
   <div class="row">
     {% for post in post %}
     <div class="col-lg-4 my-4">
-      <div class="card shadow" style="width: 20rem; height: 33rem;">
-        <img src=" {{ post.image.url }}" class="card-img-top" alt="..." height="250px">
+      <div class="card shadow">
+        <img src=" {{ post.image.url }}" class="card-img-top" alt="post-image">
         <div class="card-body">
           <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
           <p class="card-text">{{post.content| truncatechars:100}}</p>

@@ -50,9 +50,12 @@ def post_detail(request, slug):
         user = request.user
         content = request.POST.get('content', '')
         comment = Comment(user=user, content=content, blog_id=post)
+       
         comment.save()
     return render(request, "post_detail.html",
                   {'post': post, 'comments': comments})
+
+    
 
 
 def search(request):

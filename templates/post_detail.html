@@ -6,6 +6,7 @@
 <div class="container">
     <!-- post title -->
     <h2 class="blog-post-title">{{post.title}}</h2>
+    {{instance.get_readtime}}
     <br>
     <!-- post title,author and delete edit buttons -->
     <div class="media">
@@ -27,7 +28,8 @@
     <!--image url -->
     <div id="image-container">
         {% if 'placeholder' in post.image.url %}
-        <img src="https://res.cloudinary.com/dfvf6jlzb/image/upload/v1658332903/zckqp8ylve9ei8sza8pc.jpg" alt="full-stack placeholder">
+        <img src="https://res.cloudinary.com/dfvf6jlzb/image/upload/v1658332903/zckqp8ylve9ei8sza8pc.jpg"
+            alt="full-stack placeholder">
         {% else %}
         <img src="{{ post.image.url }}" alt="post-image">
         {% endif %}
@@ -63,6 +65,8 @@
             <div class="card">
                 <div class="card-header">
                     <h5>{{comment.user}} </h5>
+                    <span style="font-size: 12px;">{{comment.dateTime}}</span>
+
                 </div>
                 <div class="card-body">
                     <p class="card-text">{{comment.content}}</p>

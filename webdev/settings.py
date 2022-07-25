@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'ckeditor',
+    'readtime',
     'blog',
 ]
 

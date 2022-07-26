@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+<!-- {% extends "base.html" %}
 
 {% load i18n %}
 {% load account socialaccount %}
@@ -10,12 +10,7 @@
 <div id="login" class="container">
   <div  class="row justify-content-md-center">
     <div class="col-md-auto">
-     
-
-
-
-
-
+    
       <h3>{% trans "Login into your account" %}</h3>
 
 
@@ -28,14 +23,21 @@
         {{ form.as_p }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        
         {% endif %}
-
+    
+     
+        <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
         <button class="btn btn-primary" type="submit">{% trans "Sign In" %}</button>
+        
       </form>
+
+      
+
     </div>
 
   </div>
 
 </div>
 
-{% endblock %}
+{% endblock %} -->

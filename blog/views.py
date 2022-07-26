@@ -2,9 +2,28 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
-from .models import BlogPost, Comment
-from .forms import BlogPostForm, EditPostForm
+from .models import BlogPost, Comment, Profile
+from .forms import BlogPostForm, EditPostForm, ProfileForm
 from django.urls import reverse_lazy
+
+
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.views import generic 
+from django.contrib.auth  import authenticate,  login, logout
+from django.contrib.auth.forms import UserChangeForm
+
+
+
+class UserEditView(SuccessMessageMixin, generic.UpdateView):
+    form_class = ProfileForm
+    
+    template_name = 'edit_profile.html'
+    success_message = 'Your profile has been succesfully updated'
+    success_url = reverse_lazy('home')
+
+    def get_object(self):
+        return self.request.user
 
 
 class PostList(ListView):
@@ -66,3 +85,67 @@ def search(request):
                       {'searched': searched, 'post': post})
     else:
         return render(request, "search.html", {})
+
+
+
+def Register(request):
+    if request.method=="POST":   
+        username = request.POST['username']
+        email = request.POST['email']
+     
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+        
+        if password1 != password2:
+            messages.error(request, "Passwords do not match.")
+            return redirect('/register')
+ 
+        user = User.objects.create_user(username, email, password1)
+      
+        user.save()
+        return render(request, 'loginn.html')  
+    return render(request, "register.html")
+    
+
+def Login(request):
+    if request.method=="POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        
+        user = authenticate(username=username, password=password)
+        
+        if user is not None:
+            login(request, user)
+            messages.success(request, "Successfully Logged In")
+            return redirect("/")
+        else:
+            messages.error(request, "Invalid Credentials")
+        return render(request, 'blog.html')   
+    return render(request, "loginn.html")
+
+def Logout(request):
+    logout(request)
+    messages.success(request, "Successfully logged out")
+    return redirect('/loginn')
+
+
+def user_profile(request, myid):
+    post = BlogPost.objects.filter(id=myid)
+    return render(request, "user_profile.html", {'post':post})
+
+def Profile(request):
+    return render(request, "profile.html")
+
+
+
+# def edit_profile(request):
+    
+#     if request.method=="POST":
+#         form = ProfileForm(data=request.POST, files=request.FILES, instance=request.user.profile)
+#         if form.is_valid():
+#             form.save()
+#             alert = True
+#             return render(request, "edit_profile.html", {'alert':alert})
+#     else:
+#         form=ProfileForm(instance=request.user.profile)
+#     return render(request, "edit_profile.html", {'form':form})

@@ -37,16 +37,22 @@
           <li class="nav-item">
             <a class="nav-link active" href="#">{{request.user}}</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/profile/">Profile</a>
+          </li>
+          <li class="nav-item">
 
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link active" href="{% url 'account_signup' %}">Register</a>
+            <!-- <a class="nav-link active" href="{% url 'account_signup' %}">Register</a> -->
+            <a class="nav-link active" href="/register/">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+            <!-- <a class="nav-link" href="{% url 'account_login' %}">Login</a> -->
+            <a class="nav-link" href="/loginn/">Login</a>
           </li>
           {% endif %}
 

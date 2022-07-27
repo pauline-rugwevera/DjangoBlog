@@ -1,13 +1,9 @@
 {% extends "base.html" %}
-{{user.profile.id}}
-
+{% block title %}Profile Page{% endblock title %}
 {% block content %}
-
 <div class="container profile">
     <div class="row">
-        <div class="col-md-4">
-            
-        </div>
+        
         <div class="col-md-8">
             <div class="profile-tab">
                 <div class="tab-pane">
@@ -20,16 +16,9 @@
                             <p>{{user}}</p>
                         </div>
                     </div>
-                  
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Email:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{user.email}}</p>
-                        </div>
-                    </div>
                     
+                    
+                   
                     {% if user.profile.bio %}
                     <div class="row">
                         <div class="col-md-6">
@@ -50,16 +39,7 @@
                         </div>
                     </div>
                     {% endif %}
-                    {% if user.profile.instagram %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Instagram:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p><a href="{{user.profile.instagram}}">{{user.profile.instagram}}</a></p>
-                        </div>
-                    </div>
-                    {% endif %}
+                   
                     {% if user.profile.facebook %}
                     <div class="row">
                         <div class="col-md-6">
@@ -71,12 +51,11 @@
                     </div>
                     {% endif %}
                 </div>
-               
-             
-              
-               
+                <!-- <a href="/edit_profile/" class="btn btn-secondary">Edit Profile</a> -->
+                <a href="{% url 'edit-profile' user.profile.id %}" class="btn btn-secondary">Edit Profile</a>
             </div>
         </div>
     </div>
 </div>
-{% endblock %}
+
+{% endblock content %}

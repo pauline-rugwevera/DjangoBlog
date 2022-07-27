@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{{user.profile.id}}
+
 {% block content %}
 
 <div class="container profile">
@@ -69,7 +71,10 @@
                     </div>
                     {% endif %}
                 </div>
-                <a href="{% url 'edit-profile' %}" class="btn btn-secondary">Edit Profile</a>
+               
+             
+              
+               
             </div>
         </div>
     </div>

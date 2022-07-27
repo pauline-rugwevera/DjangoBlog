@@ -15,15 +15,22 @@ from django.contrib.auth.forms import UserChangeForm
 
 
 
-class UserEditView(SuccessMessageMixin, generic.UpdateView):
-    form_class = ProfileForm
-    
+class EditProfileView(generic.UpdateView):
+   
+    model = Profile
     template_name = 'edit_profile.html'
-    success_message = 'Your profile has been succesfully updated'
+    fields = ['linkedin', 'instagram', 'facebook', 'bio']
     success_url = reverse_lazy('home')
 
-    def get_object(self):
-        return self.request.user
+
+# class UserEditView(SuccessMessageMixin, generic.UpdateView):
+#     form_class = ProfileForm
+#     template_name = 'edit_profile.html'
+#     success_message = 'Your profile has been succesfully updated'
+#     success_url = reverse_lazy('home')
+
+#     def get_object(self):
+#         return self.request.user
 
 
 class PostList(ListView):

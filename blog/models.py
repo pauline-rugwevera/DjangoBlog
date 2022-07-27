@@ -6,6 +6,9 @@ from django.utils.timezone import now
 from ckeditor.fields import RichTextField
 
 
+import readtime
+
+
 class Profile (models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True,
                                 null=True)
@@ -13,6 +16,8 @@ class Profile (models.Model):
     facebook = models.CharField(max_length=300, blank=True, null=True)
     instagram = models.CharField(max_length=300, blank=True, null=True)
     linkedin = models.CharField(max_length=300, blank=True, null=True)
+
+   
  
     def __str__(self):
         return str(self.user)
@@ -24,6 +29,11 @@ class BlogPost(models.Model):
     slug = models.SlugField(max_length=130, unique=True)
     content = RichTextField(blank=True, null=True)
     image = CloudinaryField('image', default='placeholder')
+
+
+    def get_readtime(self):
+      result = readtime.of_text(self.content)
+      return result.text
     
     def __str__(self):
         return str(self.author) + " Blog Title: " + self.title

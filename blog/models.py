@@ -28,6 +28,7 @@ class BlogPost(models.Model):
     slug = models.SlugField(max_length=130, unique=True)
     content = RichTextField(blank=True, null=True)
     image = CloudinaryField('image', default='placeholder')
+    created_on = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)

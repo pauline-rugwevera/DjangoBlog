@@ -9,10 +9,13 @@ body {
   color: #000;
   
   background-color: #F0EBE3;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
 }
-
+.border{
+  border-style: ridge;
+  border: 5px solid;
+}
 
 .logo {
   font-family: 'Lato', sans-serif;
@@ -36,15 +39,32 @@ body {
  
 }
 
-.btn{
-  font-family: 'kavoon', sans-serif;
+.home{
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
-  
-  
+  width: 50%;
+  margin-bottom: 7px;
+  padding: 7px;
+  margin-left: 9px;
+ 
 }
+
+.card-title{
+  margin-left: 9px;
+  margin-top: 7px;
+
+
+}
+.contents{
+  padding: 1px;
+  margin-top: 2px;
+  
+} 
+
+
 .next{
   font-size: 18px;
-  font-family: 'kavoon', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   
 }
 
@@ -60,7 +80,7 @@ body {
 }
 
 
-a {
+a{
   font-family: 'Lato', sans-serif;
   letter-spacing: 2px;
   color: #000;
@@ -72,7 +92,6 @@ a {
 
 img{
   height:250px;
- 
   object-fit: cover;
  
 }
@@ -91,37 +110,58 @@ h2,h3,h5{
   font-family: 'Open Sans', sans-serif;
 }
 
-#login,#logout,#delete,#register,#search{
+#login,#logout,#register,#delete,#search,#profile,#edit-profile{
   position: relative;
   width: 100vw;
-  height: 82vh;
+  /* height: 82vh; */
+  min-height: calc(72vh - 40px);
+  bottom: 0;
 
 }
-.blue{
- background-color: #1e88e5;
- position: relative;
- padding-bottom: 0;
+
+#logout{
+  min-height: calc(76vh - 40px);
 }
+
 #delete-post{
   text-align: center;
 }
-.card-title{
-text-align: center;
 
-}
+
 
 .delete-btn{
 
 margin-left: 50px;
 }
+.cancel{
+  font-family: 'Open Sans', sans-serif;
+}
 
 .white{
   color: #FFFFFF;
 }
-.footer-p a{
-  font-family: 'Lato', sans-serif;
+.footer-p{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: #000;
+  margin: 1px;
+
  
 }
+.blue{
+  background-color: #1e88e5;
+  position: relative;
+  padding-bottom: 0;
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+ height: 110px;
+  color: #B28649;
+  padding: 2px;
+ }
+
+
+
 
 /* media queries */
 

@@ -17,7 +17,8 @@ urlpatterns = [
     path("search/", views.search, name="search"),
     path("profile/", views.profile, name="profile"),
     path("<int:pk>/edit_profile/", EditProfileView.as_view(), name="edit-profile"),
-  
+    path('user_profile/<int:myid>/', views.user_profile, name="user_profile"),
+    
    
-    # path("edit_profile/", views.edit_profile, name="edit_profile"),
+  
 ]

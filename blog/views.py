@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView,DetailView
 from .models import BlogPost, Comment, Profile
 from .forms import BlogPostForm, EditPostForm, ProfileForm, UpdateUserForm
 from django.urls import reverse_lazy
@@ -11,7 +11,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.views import generic 
-# from django.contrib.auth  import authenticate,  login, logout
+from django.contrib.auth  import authenticate,  login, logout
 from django.contrib.auth.forms import UserChangeForm
 
 
@@ -135,3 +135,28 @@ def profile(request):
         'profile_form': profile_form
     }
     return render(request, 'profile.html', context)
+
+
+
+
+
+
+# def user_profile(request, myid):
+#     post = BlogPost.objects.filter(author=myid)
+#     print(post)
+#     return render(request, "user_profile.html", {'post':post})
+   
+
+
+def user_profile(request, myid):
+    post = BlogPost.objects.filter(author=myid)
+    print(post)
+   
+    return render(request, "user_profile.html", {'post':post})
+
+
+
+
+
+
+

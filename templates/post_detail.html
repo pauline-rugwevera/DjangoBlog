@@ -11,12 +11,14 @@
     <!-- post title,author and delete edit buttons -->
     <div class="media">
         <div class="media-body">
-            <h5><a href="{{post.author.id}}/"> by {{post.author}}</a>
+            <h5>{{post.author}} | {{ post.created_on }}
+              
                 {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
                 <hr>
                 <a href="{% url 'update-post' post.pk %}" class="btn btn-primary">Edit Post</a>
                 <a href="{% url 'delete-post' post.pk %}" class="btn btn-danger">Delete Post</a>
+               
 
                 {% endif %}
                 {% endif %}
@@ -25,6 +27,7 @@
         </div>
     </div>
     <br>
+    <div class="border">
     <!--image url -->
     <div id="image-container">
         {% if 'placeholder' in post.image.url %}
@@ -37,6 +40,7 @@
     <!-- post content -->
 
     <p>{{ post.content|safe }}.</p>
+</div>
     <hr>
     <!-- add comments if authenticated -->
 
@@ -59,7 +63,7 @@
             {% endif %}
             <br>
             <!-- number of comments -->
-            <h4>All Comments ({{comments.count}})</h4>
+            <h2>All Comments ({{comments.count}})</h2>
             <br>
             {% for comment in comments %}
             <div class="card">

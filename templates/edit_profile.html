@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% block title %}Profile Page{% endblock title %}
 {% block content %}
+<div id="edit-profile">
+
+
 <form enctype="multipart/form-data" method="POST"> {% csrf_token %}
     <div class="container mt-3">
    {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Update</button>
     </div>
 </form>
+</div>
 {% endblock %}
 {% block js %}
 <script>

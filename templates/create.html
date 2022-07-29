@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
+
 {% load static % }
 {% block content %}
 
 <div class="container">
     <div class="form-group">
-        <h2>Create Post</h2>
-        <hr>
-
+        <h2 id="create-post">Create Post</h2>
         <form enctype="multipart/form-data" method="POST"> {% csrf_token %}
             <div class="container mt-4">
                 {{ form.media }}
@@ -26,4 +25,4 @@
 </div>
 {% endif %}
 
-{% endblock content %}
+{% endblock %}

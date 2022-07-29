@@ -6,16 +6,15 @@
 {% if searched %}
 
 <div class="container mt-5 mb-3 tt">
-
   <div class="row">
     {% for post in post %}
     <div class="col-lg-4 my-4">
       <div class="card shadow">
         <img src=" {{ post.image.url }}" class="card-img-top" alt="post-image">
         <div class="card-body">
-          <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}</small></h5>
+          <h5 class="card-title">{{post.title}} <br><small>by {{post.author}}|{{post.get_readtime}} read</small></h5>
           <p class="card-text">{{post.content| truncatechars:100|safe}}</p>
-          <a href="/blog/{{post.slug}}" class="btn btn-primary">Read More</a>
+          <a href="/blog/{{post.slug}}" class="btn home btn-primary">Read More</a>
 
         </div>
       </div>
@@ -35,4 +34,4 @@
 
 {% endif %}
 
-{% endblock content %}
+{% endblock  %}

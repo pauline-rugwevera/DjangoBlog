@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% load static % }
 
 {% block content %}
@@ -6,41 +7,38 @@
 <div class="container">
     <!-- post title -->
     <h2 class="blog-post-title">{{post.title}}</h2>
-   
     <br>
     <!-- post title,author and delete edit buttons -->
     <div class="media">
         <div class="media-body">
             <h5>{{post.author}} | {{ post.created_on }}
-              
+
                 {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
                 <hr>
                 <a href="{% url 'update-post' post.pk %}" class="btn btn-primary">Edit Post</a>
                 <a href="{% url 'delete-post' post.pk %}" class="btn btn-danger">Delete Post</a>
-               
-
                 {% endif %}
                 {% endif %}
-                </a></h5>
+            </h5>
 
         </div>
     </div>
     <br>
     <div class="border">
-    <!--image url -->
-    <div id="image-container">
-        {% if 'placeholder' in post.image.url %}
-        <img src="https://res.cloudinary.com/dfvf6jlzb/image/upload/v1658332903/zckqp8ylve9ei8sza8pc.jpg"
-            alt="full-stack placeholder">
-        {% else %}
-        <img src="{{ post.image.url }}" alt="post-image">
-        {% endif %}
-    </div>
-    <!-- post content -->
+        <!--image url -->
+        <div id="image-container">
+            {% if 'placeholder' in post.image.url %}
+            <img src="https://res.cloudinary.com/dfvf6jlzb/image/upload/v1658332903/zckqp8ylve9ei8sza8pc.jpg"
+                alt="full-stack placeholder">
+            {% else %}
+            <img src="{{ post.image.url }}" alt="post-image">
+            {% endif %}
+        </div>
 
-    <p>{{ post.content|safe }}.</p>
-</div>
+        <!-- post content -->
+        <p>{{ post.content|safe }}.</p>
+    </div>
     <hr>
     <!-- add comments if authenticated -->
 
@@ -49,8 +47,8 @@
         <h2>Add Comments Here</h2>
         <form action="/blog/{{post.slug}}/" method="POST"> {% csrf_token %}
             <div class="form-floating">
-                <textarea class="form-control" required placeholder="Leave a comment here" id="floatingTextarea2"
-                    style="height: 100px" id="content" name="content"></textarea>
+                <textarea class="form-control comments-textarea" rows="4" required placeholder="Leave a comment here"
+                    id="floatingTextarea2" id="content" name="content"></textarea>
                 <label for="floatingTextarea2">Leave a comment here.</label>
                 <br>
                 <button type="submit" class="btn btn-primary">Comment</button>
@@ -69,7 +67,7 @@
             <div class="card">
                 <div class="card-header">
                     <h5>{{comment.user}} </h5>
-                    <span style="font-size: 12px;">{{comment.dateTime}}</span>
+                    <span class="date-time">{{comment.dateTime}}</span>
 
                 </div>
                 <div class="card-body">
@@ -90,4 +88,4 @@
     </div>
     {% endif %}
 
-    {% endblock content %}
+    {% endblock %}

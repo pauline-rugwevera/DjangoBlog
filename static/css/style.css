@@ -36,6 +36,7 @@ body {
  
   width: 18rem;
   height: 33rem;
+
  
 }
 
@@ -53,7 +54,9 @@ body {
   margin-left: 9px;
   margin-top: 7px;
 
-
+}
+#create-post{
+  margin-left:24px;
 }
 .contents{
   padding: 1px;
@@ -118,10 +121,14 @@ h2,h3,h5{
   bottom: 0;
 
 }
+.profile{
+  min-height: calc(80vh - 40px);
+}
 
 #logout{
   min-height: calc(76vh - 40px);
 }
+
 
 #delete-post{
   text-align: center;
@@ -155,11 +162,36 @@ margin-left: 50px;
   text-align: center;
   font-size: 20px;
   position: relative;
- height: 110px;
+ height: 92px;
   color: #B28649;
   padding: 2px;
  }
+ .social-links{
+  padding: 7px;
+ }
 
+
+.my-profile{
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 3%;
+  border-radius: 0.5rem;
+ margin-left: 30px;
+
+
+
+}
+.update-profile{
+  margin-left: 30px;
+  margin-bottom: 10px;
+ 
+}
+.comments-textarea{
+  height: 200px;
+}
+.date-time{
+  font-size: 12px;
+}
 
 
 

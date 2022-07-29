@@ -13,8 +13,7 @@ class Profile (models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True,
                                 null=True)
     bio = models.TextField(blank=True, null=True)
-    facebook = models.CharField(max_length=300, blank=True, null=True)
-    instagram = models.CharField(max_length=300, blank=True, null=True)
+    
     linkedin = models.CharField(max_length=300, blank=True, null=True)
 
 

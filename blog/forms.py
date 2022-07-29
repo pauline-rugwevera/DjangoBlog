@@ -41,26 +41,23 @@ class UpdateUserForm(forms.ModelForm):
     username = forms.CharField(max_length=100,
                                required=True,
                                widget=forms.TextInput(attrs={'class': 'form-control'}))
-    email = forms.EmailField(required=True,
-                             widget=forms.TextInput(attrs={'class': 'form-control'}))
+    # email = forms.EmailField(
+    #                          widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = User
-        fields = ['username', 'email']
+        fields = ['username',]
 
 
-class ProfileForm(forms.ModelForm):
-    facebook = forms.CharField(max_length=25,
-                               required=False,
-                               widget=forms.TextInput(attrs={'class': 'form-control'}))
-
- 
-    linkedin = forms.CharField(max_length=25,
+class UpdateProfileForm(forms.ModelForm):
+    
+    linkedin = forms.CharField(max_length=30,
                                required=False,
                                widget=forms.TextInput(attrs={'class': 'form-control'}))
  
-    bio = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 5}))
+    bio = forms.CharField( required=False, widget=forms.Textarea(attrs={'class': 'form-control', 'rows': 5}))
 
+    
     class Meta:
         model = Profile
-        fields = ['facebook', 'linkedin', 'bio']
+        fields = ['linkedin', 'bio']

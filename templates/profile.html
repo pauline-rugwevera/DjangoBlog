@@ -1,61 +1,32 @@
 {% extends "base.html" %}
-{% block title %}Profile Page{% endblock title %}
+
 {% block content %}
-<div id="profile" class="container">
-    <div class="row">
-        
-        <div class="col-md-8">
-            <div class="profile-tab">
-                <div class="tab-pane">
-                    <br><br>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Username:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{user}}</p>
-                        </div>
-                    </div>
-                    
-                    
-                   
-                    {% if user.profile.bio %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Bio:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p>{{user.profile.bio}}</p>
-                        </div>
-                    </div>
-                    {% endif %}
-                    {% if user.profile.linkedin %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Linkedin:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p><a href="{{user.profile.linkedin}}">{{user.profile.linkedin}}</a></p>
-                        </div>
-                    </div>
-                    {% endif %}
-                   
-                    {% if user.profile.facebook %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>Facebook:</label>
-                        </div>
-                        <div class="col-md-6">
-                            <p><a href="{{user.profile.facebook}}">{{user.profile.facebook}}</a></p>
-                        </div>
-                    </div>
-                    {% endif %}
+
+<div class="container profile">
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-row my-profile">
+            <div class="col-md-5">
+                <div class="form-group ">
+                    <label>Username:</label>
+                    {{ user_form.username }}
                 </div>
-                <!-- <a href="/edit_profile/" class="btn btn-secondary">Edit Profile</a> -->
-                <a href="{% url 'edit-profile' user.profile.id %}" class="btn btn-secondary">Edit Profile</a>
+
+                <div class="form-group ">
+                    <label>linkedin:</label>
+                    {{ profile_form.linkedin }}
+                </div>
+
+                <label>Bio:</label> {{ profile_form.bio }}
             </div>
         </div>
-    </div>
+
+        <button class="btn btn-primary btn-md update-profile">Update profile</button>
+
+    </form>
+
 </div>
 
-{% endblock content %}
+
+{% endblock %}

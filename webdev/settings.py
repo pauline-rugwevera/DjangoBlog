@@ -17,7 +17,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ["webdev-django-blog.herokuapp.com", "localhost"]
@@ -57,7 +57,9 @@ MESSAGE_TAGS = {
         messages.ERROR: 'alert-danger',
     }
 
-CRISPY_TEMPLATE_PACK = 'bootsrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 
 
 MIDDLEWARE = [
@@ -153,3 +155,4 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

@@ -54,22 +54,24 @@ class UpdateProfileForm(forms.ModelForm):
         fields = ['linkedin', 'bio']
 
 
-class CreateForm(forms.ModelForm):
-    """
-    Form class to add a recipe
-    """
-    class Meta:
-        model = BlogPost
-        fields = [
-            'title',
-            'content',
-            'image',
-        ]
+# class CreateForm(forms.ModelForm):
+#     """
+#     Form class to add a recipe
+#     """
+#     class Meta:
+#         model = BlogPost
+#         fields = [
+#             'title',
+#             'content',
+#             'slug',
+#             'image',
+#         ]
 
-        widgets = {
-            'title': SummernoteWidget(),
-            'image': SummernoteWidget(),
-        }
+#         widgets = {
+           
+#             'content': SummernoteWidget(),
+              
+#         }
 
-    def __init__(self, *args, **kwargs):
-        super(CreateForm, self).__init__(*args, **kwargs)
+#     def __init__(self, *args, **kwargs):
+#         super(CreateForm, self).__init__(*args, **kwargs)

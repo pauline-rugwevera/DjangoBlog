@@ -4,7 +4,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import BlogPost, Comment, Profile
 from .forms import BlogPostForm, EditPostForm, UpdateProfileForm
-from .forms import UpdateUserForm, CreateForm
+from .forms import UpdateUserForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 
@@ -17,21 +17,21 @@ class PostList(ListView):
 
 
 class Create(SuccessMessageMixin, CreateView):
-    # model = BlogPost
-    model = CreateForm
+    model = BlogPost
+    
     form_class = BlogPostForm
     template_name = 'create.html'
     success_message = 'Your post has been successfully created'
 
-    def form_valid(self, form):
-        """
-        Called if all forms are valid. Creates a Recipe instance along with
-        associated Ingredients and Instructions and then redirects to a
-      homepage.
-        """
-        obj = form.save(commit=False)
-        obj.author = self.request.user
-        return super().form_valid(form)
+    # def form_valid(self, form):
+    #     """
+    #     Called if all forms are valid. Creates a Recipe instance along with
+    #     associated Ingredients and Instructions and then redirects to a
+    #   homepage.
+    #     """
+    #     obj = form.save(commit=False)
+    #     obj.author = self.request.user
+    #     return super().form_valid(form)
 
 
 class UpdatePost(SuccessMessageMixin, UpdateView):
@@ -95,7 +95,7 @@ def profile(request):
                                             'profile_form': profile_form})
 
 
-#try out
+# try out
 # def Create(request):
 #     """
 #     renders share a recipe page
@@ -114,7 +114,7 @@ def profile(request):
 #             recipe = recipe_form.save(commit=False)
 
 #             recipe.save()
-#             return redirect('index')
+#             return redirect('/')
 #         else:
 #             print('invalid')
 #     else:

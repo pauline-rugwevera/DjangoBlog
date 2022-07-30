@@ -11,9 +11,5 @@ urlpatterns = [
     path('blog/<str:slug>/', views.post_detail, name="post-detail"),
     path("search/", views.search, name="search"),
     path("profile/", views.profile, name="profile"),
-    # path(
-    #     'create',
-    #     views.Create,
-    #     name='create'
-    # ),
+  
 ]

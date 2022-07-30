@@ -6,6 +6,10 @@ body {
   color: #000;
   background-color: #F0EBE3;
 }
+#recipe{
+  width: 100%;
+}
+
 
 .border{
   border-style: ridge;

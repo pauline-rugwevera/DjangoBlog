@@ -5,13 +5,12 @@
 {% block content %}
 
 <div id="delete" class="container">
-    <div class="text-center">
+    <div class="delete-post">
         <form method="POST">
             {% csrf_token %}
-            <h2>Delete Post?</h2>
-            <p class="card-title">You are about to delete this post!?</p>
+            <h2 id="delete-header">Delete Post?</h2>
             <p class="card-title">All data of this post will be permanently deleted</p>
-            <button class="btn btn-danger delete-btn">Delete post</button>
+            <button class="btn btn-danger delete-btn">Confirm</button>
             <a href="/" class="btn btn-primary delete-btn cancel">Cancel</a>
             <br>
         </form>

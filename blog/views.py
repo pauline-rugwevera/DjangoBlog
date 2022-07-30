@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
@@ -7,14 +7,6 @@ from .forms import BlogPostForm, EditPostForm, UpdateProfileForm
 from .forms import UpdateUserForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
-from django.views import generic 
-
-
-class EditProfileView(generic.UpdateView):
-    model = Profile
-    form_class = UpdateProfileForm
-    template_name = 'edit_profile.html'
-    success_url = reverse_lazy('home')
 
 
 class PostList(ListView):
@@ -70,7 +62,7 @@ def post_detail(request, slug):
     return render(request, "post_detail.html",
                   {'post': post, 'comments': comments})
 
-    
+
 def search(request):
     if request.method == "POST":
         searched = request.POST['searched']
@@ -81,50 +73,22 @@ def search(request):
         return render(request, "search.html", {})
 
 
-# @login_required
-# def profile(request):
-#     """
-#     import required forms and create instances of those forms
-#     upon submission, it pass in the post data to the forms
-#     The user form expects an instance of a user while
-#     profile form we pass in an instance of the profile
-#     """
-#     Profile.objects.get_or_create(user=request.user)
-#     if request.method == 'POST':
-#         user_form = UpdateUserForm(request.POST, instance=request.user)
-#         profile_form = UpdateProfileForm(request.POST,
-#                                    request.FILES,
-#                                    instance=request.user.profile)
-
-#         if user_form.is_valid() and profile_form.is_valid():
-#             user_form.save()
-#             profile_form.save()
-#             messages.success(request, f'Your account has been updated!')
-#             return redirect('profile')
-#     else:
-
-#         user_form  = UpdateUserForm(instance=request.user)
-#         profile_form = UpdateProfileForm(instance=request.user.profile)
-#     context = {
-#         'user_form ': user_form,
-#         'profile_form': profile_form
-#     }
-#     return render(request, 'profile.html', context)
-
 @login_required
 def profile(request):
     profile = Profile.objects.get_or_create(user=request.user)
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
-        profile_form = UpdateProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        profile_form = UpdateProfileForm(request.POST, request.FILES,
+                                         instance=request.user.profile)
 
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, 'Your profile is updated successfully')
+            messages.success(request, 'Profile is updated successfully')
             return redirect(to='/')
     else:
         user_form = UpdateUserForm(instance=request.user)
         profile_form = UpdateProfileForm(instance=request.user.profile)
 
-    return render(request, 'profile.html', {'user_form': user_form, 'profile_form': profile_form})
+    return render(request, 'profile.html', {'user_form': user_form,
+                                            'profile_form': profile_form})

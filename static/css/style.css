@@ -1,17 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Hubballi&family=Inspiration&family=Kavoon&family=Orelega+One&family=Roboto+Condensed:wght@300&family=Square+Peg&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto+Condensed:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
-
 
 body {
   font-family: 'Open Sans', sans-serif;
   color: #000;
-  
   background-color: #F0EBE3;
-  /* width: 100vw;
-  height: 100vh; */
 }
+
 .border{
   border-style: ridge;
   border: 5px solid;
@@ -33,11 +28,17 @@ body {
 
 
 .image-shadow {
- 
   width: 18rem;
   height: 33rem;
 
- 
+}
+.title{
+  margin-left: 14px;
+  font-weight: 700;
+}
+
+.blog-post-title{
+  font-weight: bold;
 }
 
 .home{
@@ -50,11 +51,6 @@ body {
  
 }
 
-.card-title{
-  margin-left: 9px;
-  margin-top: 7px;
-
-}
 #create-post{
   margin-left:24px;
 }
@@ -116,7 +112,6 @@ h2,h3,h5{
 #login,#logout,#register,#delete,#search,#profile,#edit-profile{
   position: relative;
   width: 100vw;
-  /* height: 82vh; */
   min-height: calc(72vh - 40px);
   bottom: 0;
 
@@ -129,31 +124,37 @@ h2,h3,h5{
   min-height: calc(76vh - 40px);
 }
 
-
-#delete-post{
-  text-align: center;
+#delete{
+ display: flex;
+ justify-content: center;
+}
+#delete-header{
+  
+  font-size: 35px;
 }
 
 
-
-.delete-btn{
-
-margin-left: 50px;
+.detail-post{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+ 
 }
+
 .cancel{
   font-family: 'Open Sans', sans-serif;
+  margin-left: 15px;
 }
 
 .white{
   color: #FFFFFF;
 }
+
 .footer-p{
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   color: #000;
   margin: 1px;
 
- 
 }
 .blue{
   background-color: #1e88e5;
@@ -166,6 +167,7 @@ margin-left: 50px;
   color: #B28649;
   padding: 2px;
  }
+ 
  .social-links{
   padding: 7px;
  }
@@ -177,7 +179,6 @@ margin-left: 50px;
   margin-bottom: 3%;
   border-radius: 0.5rem;
  margin-left: 30px;
-
 
 
 }
@@ -194,13 +195,8 @@ margin-left: 50px;
 }
 
 
-
 /* media queries */
 
-
-  
-
-  
   @media only screen and (max-width:1000px) {
      .image-shadow{
       width: 40rem;

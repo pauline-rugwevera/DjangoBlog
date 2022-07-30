@@ -16,8 +16,8 @@
                 {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
                 <hr>
-                <a href="{% url 'update-post' post.pk %}" class="btn btn-primary">Edit Post</a>
-                <a href="{% url 'delete-post' post.pk %}" class="btn btn-danger">Delete Post</a>
+                <a href="{% url 'update-post' post.pk %}" class="btn detail-post btn-primary">Edit Post</a>
+                <a href="{% url 'delete-post' post.pk %}" class="btn detail-post btn-danger">Delete Post</a>
                 {% endif %}
                 {% endif %}
             </h5>

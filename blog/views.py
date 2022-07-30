@@ -4,7 +4,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from .models import BlogPost, Comment, Profile
 from .forms import BlogPostForm, EditPostForm, UpdateProfileForm
-from .forms import UpdateUserForm
+from .forms import UpdateUserForm, CreateForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 
@@ -17,9 +17,10 @@ class PostList(ListView):
 
 
 class Create(SuccessMessageMixin, CreateView):
-    model = BlogPost
+    # model = BlogPost
+    model = CreateForm
     form_class = BlogPostForm
-    template_name = 'create.html'
+    template_name = 'creaate.html'
     success_message = 'Your post has been successfully created'
 
     def form_valid(self, form):
@@ -92,3 +93,30 @@ def profile(request):
 
     return render(request, 'profile.html', {'user_form': user_form,
                                             'profile_form': profile_form})
+
+
+#try out
+# def Create(request):
+#     """
+#     renders share a recipe page
+#     """
+#     recipe_form = CreateForm(request.POST or None, request.FILES or None)
+#     context = {
+#         'recipe_form': recipe_form,
+#     }
+
+#     if request.method == "POST":
+#         recipe_form = CreateForm(request.POST, request.FILES)
+#         if recipe_form.is_valid():
+#             print('valid')
+#             recipe_form.instance.author = request.user
+          
+#             recipe = recipe_form.save(commit=False)
+
+#             recipe.save()
+#             return redirect('index')
+#         else:
+#             print('invalid')
+#     else:
+#         recipe_form = CreateForm()
+#     return render(request, "creaate.html", context)

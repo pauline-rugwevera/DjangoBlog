@@ -1,3 +1,4 @@
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from django import forms
 from django.contrib.auth.models import User
 from .models import BlogPost, Profile
@@ -51,3 +52,24 @@ class UpdateProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['linkedin', 'bio']
+
+
+class CreateForm(forms.ModelForm):
+    """
+    Form class to add a recipe
+    """
+    class Meta:
+        model = BlogPost
+        fields = [
+            'title',
+            'content',
+            'image',
+        ]
+
+        widgets = {
+            'title': SummernoteWidget(),
+            'image': SummernoteWidget(),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(CreateForm, self).__init__(*args, **kwargs)

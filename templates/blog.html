@@ -20,22 +20,23 @@
         <!-- <h5 class="card-title title">{{post.title}} -->
           <br>
           <!-- post author -->
-          <small>by
-            {{post.author}}|{{post.get_readtime}} read
-          </small>
-        </h5>
+         
+        <!-- </h5> -->
         <!-- post content -->
         <!-- <p class="contents">{{post.content| truncatechars:150|safe }}</p> -->
       
          <a href="{% url 'post-detail' post.slug %}">
           <h2 class="card-title title ">{{ post.title }}</h2>
-
          </a>
+         <small>
+          <p id="author">by {{post.author}}|{{post.get_readtime}} read</p>
+          </small>
        
     
         
       </div>
     </div>
+    
 
     {% endfor %}
   </div>

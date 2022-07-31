@@ -34,17 +34,22 @@ body {
 
 .image-shadow {
   width: 18rem;
-  /* height: 33rem; */
-  height: 18rem;
+  height: 19rem;
+  /* height: 18rem; */
     background-color: #371B58
 }
 
 
 .title{
-  /* margin-left: 14px;
-  font-weight: 700; */
-
+   margin-left: 14px;
   color: #AE8141;
+  font-family: 'Kavoon', sans-serif;
+  font-size: 26px;
+}
+#author{
+color: #AE8141;
+font-family: 'Open Sans', sans-serif;
+font-size: 12px;
 }
 
 .blog-post-title{

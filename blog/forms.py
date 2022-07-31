@@ -17,17 +17,17 @@ from .models import BlogPost, Profile
 #         }
 
 
-class EditPostForm(forms.ModelForm):
-    class Meta:
-        model = BlogPost
-        fields = ('title', 'content', 'image')
-        widgets = {
-            'title': forms.TextInput
-            (attrs={'class': 'form-control',
-                             'placeholder': 'Post Title'}),
-            'content': forms.Textarea(attrs={'class': 'form-control',
-                                             'placeholder': 'Post contents'}),
-        }
+# class EditPostForm(forms.ModelForm):
+#     class Meta:
+#         model = BlogPost
+#         fields = ('title', 'content', 'image')
+#         widgets = {
+#             'title': forms.TextInput
+#             (attrs={'class': 'form-control',
+#                              'placeholder': 'Post Title'}),
+#             'content': forms.Textarea(attrs={'class': 'form-control',
+#                                              'placeholder': 'Post contents'}),
+#         }
 
 
 class UpdateUserForm(forms.ModelForm):
@@ -73,6 +73,15 @@ class BlogPostForm(forms.ModelForm):
            
             'content': SummernoteWidget(),
               
+        }
+
+class EditPostForm(forms.ModelForm):
+    class Meta:
+        model = BlogPost
+        fields = ('title', 'content', 'image')
+        widgets = {
+            'content': SummernoteWidget(),
+          
         }
 
   

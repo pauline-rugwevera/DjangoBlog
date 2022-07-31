@@ -4,17 +4,17 @@ from django.contrib.auth.models import User
 from .models import BlogPost, Profile
 
 
-class BlogPostForm(forms.ModelForm):
-    class Meta:
-        model = BlogPost
-        fields = ('title', 'content', 'image')
-        widgets = {
-            'title': forms.TextInput
-            (attrs={'class': 'form-control', 'placeholder':
-                                             'Post Title'}),
-            'content': forms.Textarea(attrs={'class': 'form-control',
-                                             'placeholder': 'Post contents'}),
-        }
+# class BlogPostForm(forms.ModelForm):
+#     class Meta:
+#         model = BlogPost
+#         fields = ('title', 'content', 'image')
+#         widgets = {
+#             'title': forms.TextInput
+#             (attrs={'class': 'form-control', 'placeholder':
+#                                              'Post Title'}),
+#             'content': forms.Textarea(attrs={'class': 'form-control',
+#                                              'placeholder': 'Post contents'}),
+#         }
 
 
 class EditPostForm(forms.ModelForm):
@@ -54,24 +54,25 @@ class UpdateProfileForm(forms.ModelForm):
         fields = ['linkedin', 'bio']
 
 
-# class CreateForm(forms.ModelForm):
-#     """
-#     Form class to add a recipe
-#     """
-#     class Meta:
-#         model = BlogPost
-#         fields = [
-#             'title',
-#             'content',
-#             'slug',
-#             'image',
-#         ]
+class BlogPostForm(forms.ModelForm):
+    """
+    Form class to add a recipe
+    """
+    class Meta:
+        model = BlogPost
+        fields = [
+            'title',
+            
+    
+            'content',
+          
+            'image',
+        ]
 
-#         widgets = {
+        widgets = {
            
-#             'content': SummernoteWidget(),
+            'content': SummernoteWidget(),
               
-#         }
+        }
 
-#     def __init__(self, *args, **kwargs):
-#         super(CreateForm, self).__init__(*args, **kwargs)
+  

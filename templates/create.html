@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
+
 {% load static % }
 {% block content %}
 
@@ -8,7 +8,7 @@
         <h2 id="create-post">Create Post</h2>
         <form enctype="multipart/form-data" method="POST"> {% csrf_token %}
             <div class="container mt-4">
-                {{ form.media }}
+                <!-- {{ form.media }} -->
                 {{ form.as_p }}
                 <button class="btn btn-primary">Create Post</button>
             </div>
@@ -26,3 +26,6 @@
 {% endif %}
 
 {% endblock %}
+
+   <!-- <a href="blog/{{post.slug}}" class="btn home btn-primary">Read More</a> -->
+         <!-- <a href="{% url 'post-detail' post.slug %}" class="btn home btn-primary">Read More</a> -->

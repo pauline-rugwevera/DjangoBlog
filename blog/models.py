@@ -3,8 +3,9 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
 from django.utils.timezone import now
-from ckeditor.fields import RichTextField
+# from ckeditor.fields import RichTextField
 import readtime
+from django.template.defaultfilters import slugify
 
 
 class Profile (models.Model):
@@ -21,9 +22,13 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=250, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=130, unique=True)
-    content = RichTextField(blank=True, null=True)
+    content = models.TextField()
     image = CloudinaryField('image', default='placeholder')
     created_on = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(BlogPost, self).save(*args, **kwargs)
 
     def __str__(self):
         return str(self.author) + " Blog Title: " + self.title

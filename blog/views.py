@@ -8,12 +8,16 @@ from .forms import UpdateUserForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
+
 
 class PostList(ListView):
     model = BlogPost
     template_name = 'blog.html'
     ordering = ['-id']
-    paginate_by = 3
+    paginate_by = 6
+
+
 
 
 class Create(SuccessMessageMixin, CreateView):
@@ -22,6 +26,29 @@ class Create(SuccessMessageMixin, CreateView):
     form_class = BlogPostForm
     template_name = 'create.html'
     success_message = 'Your post has been successfully created'
+
+    # def form_valid(self, form):
+      
+
+
+    def form_valid(self, form):
+
+        user = self.request.user
+        form.instance.author = user
+        return super(Create, self).form_valid(form)
+        # obj = form.save(commit=False)
+        # obj.author = self.request.user
+        # return super().form_valid(form)
+
+
+
+
+# class Create(SuccessMessageMixin, CreateView):
+#     model = BlogPost
+    
+#     form_class = BlogPostForm
+#     template_name = 'create.html'
+#     success_message = 'Your post has been successfully created'
 
     # def form_valid(self, form):
     #     """

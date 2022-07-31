@@ -16,8 +16,10 @@
                 {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
                 <hr>
-                <a href="{% url 'update-post' post.pk %}" class="btn detail-post btn-primary">Edit Post</a>
-                <a href="{% url 'delete-post' post.pk %}" class="btn detail-post btn-danger">Delete Post</a>
+                <a href="{% url 'update-post' post.pk %}" class="btn detailed-post btn" >Edit Post</a>
+               
+              
+                <a href="{% url 'delete-post' post.pk %}" class="btn detailed-post btn">Delete Post</a>
                 {% endif %}
                 {% endif %}
             </h5>
@@ -51,13 +53,14 @@
                     id="floatingTextarea2" id="content" name="content"></textarea>
                 <label for="floatingTextarea2">Leave a comment here.</label>
                 <br>
-                <button type="submit" class="btn btn-primary">Comment</button>
+                <button type="submit" class="btn comment-btn">Comment</button>
             </div>
         </form>
         {% else %}
         <!-- login to comment -->
         <div class="container">
-            <h4><a href="/accounts/login/" class="login">Login</a> to post comments below.</h4>
+            <a href="/accounts/login/" class=" btn login-direct">Login</a> to post comments below.
+            <br>
             {% endif %}
             <br>
             <!-- number of comments -->

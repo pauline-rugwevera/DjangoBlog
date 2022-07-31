@@ -7,23 +7,25 @@ body {
   color: #000;
   background-color: #F0EBE3;
 }
-#recipe{
+
+#recipe {
   width: 100%;
 }
 
-.border{
+.border {
   border-style: ridge;
   border: 5px solid;
 }
 
 .logo {
   font-family: 'Lato', sans-serif;
- 
+
   color: #000;
   font-weight: bold;
   font-size: 23px;
 }
-.toggle{
+
+.toggle {
   color: black;
 }
 
@@ -36,50 +38,56 @@ body {
   width: 18rem;
   height: 19rem;
   /* height: 18rem; */
-    background-color: #371B58
+  background-color: #371B58
 }
 
 
-.title{
-   margin-left: 14px;
+.title {
+  margin-left: 14px;
   color: #AE8141;
   font-family: 'Kavoon', sans-serif;
   font-size: 26px;
 }
-#author{
-color: #AE8141;
-font-family: 'Lato', sans-serif;
-font-size: 12px;
+
+#author {
+  color: #AE8141;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
 }
 
-.blog-post-title{
-  font-weight: bold;
+.blog-post-title {
+  margin-top: 10px;
 }
 
-.home{
+.home {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   width: 50%;
   margin-bottom: 7px;
   padding: 7px;
   margin-left: 9px;
- 
+
 }
 
-#create-post{
-  margin-left:24px;
+#create-post {
+  margin-left: 24px;
 }
-.contents{
+
+.contents {
   padding: 1px;
   margin-top: 2px;
-  
-} 
+
+}
 
 
-.next{
+.next,
+.previous {
+
   font-size: 18px;
-  font-family: 'Open Sans', sans-serif;
-  
+  background-color: #371B58;
+  color: #AE8141;
+  font-family: 'Kavoon', sans-serif;
+
 }
 
 
@@ -94,7 +102,7 @@ font-size: 12px;
 }
 
 
-a{
+a {
   font-family: 'Lato', sans-serif;
   letter-spacing: 2px;
   color: #000;
@@ -103,161 +111,214 @@ a{
   font-weight: bold;
 
 }
-
-img{
-  height:250px;
-  object-fit: cover;
- 
+a:hover{
+ color: #371B58;
 }
 
-p{
+img {
+  height: 250px;
+  object-fit: cover;
+
+}
+
+p {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 30px;
   padding: 10px;
 }
-h2,h3,h5{
+
+h2,
+h3,
+h5 {
   font-family: 'Open Sans', sans-serif;
   font-size: 20px;
 }
-.login{
+
+.login {
   font-family: 'Open Sans', sans-serif;
 }
 
-#login,#logout,#register,#delete,#search,#profile,#edit-profile{
+#login,
+#logout,
+#register,
+#delete,
+#search,
+#profile,
+#edit-profile {
   position: relative;
   width: 100vw;
   min-height: calc(72vh - 40px);
   bottom: 0;
 
 }
-.profile{
+
+.profile {
   min-height: calc(80vh - 40px);
 }
 
-#logout{
+#logout {
   min-height: calc(76vh - 40px);
 }
 
-#delete{
- display: flex;
- justify-content: center;
+#delete {
+  display: flex;
+  justify-content: center;
 }
-#delete-header{
-  
+
+#delete-header {
+  font-family: 'Open Sans', sans-serif;
   font-size: 35px;
 }
 
 
-.detail-post{
-  font-family: 'Open Sans', sans-serif;
+.detailed-post,
+.edit-post,
+.comment-btn,
+.create-btn,
+.update-profile,
+.cancel-btn,
+.logout,
+.login-btn,
+.sign-up,
+.login-direct,
+.cancel-logout,
+.delete-btn {
+  font-family: 'Lato', sans-serif;
   font-size: 18px;
- 
+  background-color: #F0EBE3;
+  color: #000;
+  border: 2px solid #371B58;
+
+
 }
 
-.cancel{
+.btn:hover {
+  background-color: #371B58;
+  color: #AE8141;
+}
+
+#log-out {
   font-family: 'Open Sans', sans-serif;
+  font-size: 35px;
+}
+
+
+
+
+
+
+
+
+
+.cancel {
+  font-family: 'Lato', sans-serif;
   margin-left: 15px;
 }
 
-.white{
+.white {
   color: #FFFFFF;
 }
 
-.footer-p{
+.footer-p {
   font-family: 'Lato', sans-serif;
   font-size: 18px;
   color: #B28649;
   margin: 1px;
 
 }
-.footer{
+
+.footer {
   background-color: #371B58;
   position: relative;
   padding-bottom: 0;
   text-align: center;
   font-size: 20px;
   position: relative;
- height: 92px;
+  height: 92px;
   color: #B28649;
   padding: 2px;
- }
- 
- .social-links{
+}
+
+.social-links {
   padding: 7px;
   color: #B28649;
 
- }
+}
 
 
-.my-profile{
+.my-profile {
   padding: 5px;
   margin-top: 10px;
   margin-bottom: 3%;
   border-radius: 0.5rem;
- margin-left: 30px;
+  margin-left: 30px;
 
 
 }
-.update-profile{
+
+.update-profile {
   margin-left: 30px;
   margin-bottom: 10px;
- 
+
 }
-.comments-textarea{
+
+.comments-textarea {
   height: 200px;
 }
-.date-time{
+
+.date-time {
   font-size: 12px;
 }
 
 
 /* media queries */
 
-  @media only screen and (max-width:1000px) {
-     .image-shadow{
-      width: 40rem;
-      margin:0 auto;
-     
-     }
-    
-    }
+@media only screen and (max-width:1000px) {
+  .image-shadow {
+    width: 40rem;
+    margin: 0 auto;
 
-    @media only screen and (max-width:780px) {
-      .image-shadow{
-   width: 35rem;
-   margin:0 auto;
-   margin-top: 28px;
-   
-      }
-     
-     } 
-     @media only screen and (max-width:630px) {
-      .image-shadow{
-        width: 25rem;
-        margin:0 auto;
-        margin-top: 28px;
-  
-      }
-     
-     } 
+  }
 
-     @media only screen and (max-width:440px) {
-      .image-shadow{
-        width: 18rem;
-        margin:0 auto;
-        margin-top: 28px;
-  
-      }
-     
-     } 
+}
 
-     @media only screen and (max-width:320px) {
-      .image-shadow{
-        width: 15rem;
-        margin:0 auto;
-        margin-top: 28px;
-  
-      }
-     
-     } 
+@media only screen and (max-width:780px) {
+  .image-shadow {
+    width: 35rem;
+    margin: 0 auto;
+    margin-top: 28px;
+
+  }
+
+}
+
+@media only screen and (max-width:630px) {
+  .image-shadow {
+    width: 25rem;
+    margin: 0 auto;
+    margin-top: 28px;
+
+  }
+
+}
+
+@media only screen and (max-width:440px) {
+  .image-shadow {
+    width: 18rem;
+    margin: 0 auto;
+    margin-top: 28px;
+
+  }
+
+}
+
+@media only screen and (max-width:320px) {
+  .image-shadow {
+    width: 15rem;
+    margin: 0 auto;
+    margin-top: 28px;
+
+  }
+
+}

@@ -5,10 +5,8 @@
 {% block content %}
 
 <div class="container">
-    <!-- post title -->
     <h2 class="blog-post-title">{{post.title}}</h2>
     <br>
-    <!-- post title,author and delete edit buttons -->
     <div class="media">
         <div class="media-body">
             <h5>{{post.author}} | {{ post.created_on }}
@@ -16,9 +14,7 @@
                 {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
                 <hr>
-                <a href="{% url 'update-post' post.pk %}" class="btn detailed-post btn" >Edit Post</a>
-               
-              
+                <a href="{% url 'update-post' post.pk %}" class="btn detailed-post btn">Edit Post</a>
                 <a href="{% url 'delete-post' post.pk %}" class="btn detailed-post btn">Delete Post</a>
                 {% endif %}
                 {% endif %}
@@ -28,7 +24,7 @@
     </div>
     <br>
     <div class="border">
-        <!--image url -->
+
         <div id="image-container">
             {% if 'placeholder' in post.image.url %}
             <img src="https://res.cloudinary.com/dfvf6jlzb/image/upload/v1658332903/zckqp8ylve9ei8sza8pc.jpg"
@@ -37,13 +33,9 @@
             <img src="{{ post.image.url }}" alt="post-image">
             {% endif %}
         </div>
-
-        <!-- post content -->
         <p>{{ post.content|safe }}.</p>
     </div>
     <hr>
-    <!-- add comments if authenticated -->
-
     {% if user.is_authenticated %}
     <div class="container">
         <h2>Add Comments Here</h2>
@@ -57,13 +49,11 @@
             </div>
         </form>
         {% else %}
-        <!-- login to comment -->
         <div class="container">
             <a href="/accounts/login/" class=" btn login-direct">Login</a> to post comments below.
             <br>
             {% endif %}
             <br>
-            <!-- number of comments -->
             <h2>All Comments ({{comments.count}})</h2>
             <br>
             {% for comment in comments %}

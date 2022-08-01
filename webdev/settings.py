@@ -175,7 +175,7 @@ SUMMERNOTE_CONFIG = {
 
         'fontNames': ['Montserrat'],
         'fontNamesIgnoreCheck': ['Montserrat'],
-        'fontSizes': ['14'],
+        'fontSizes': ['20'],
         'fontSizeUnits': ['px'],
         # Toolbar customization
         # https://summernote.org/deep-dive/#custom-toolbar-popover

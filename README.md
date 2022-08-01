@@ -18,3 +18,42 @@ Web development is my 4th project I did with Code Institute. The requiremenrs fo
 12. As an Admin I can create, read, update and delete posts so that I can manage my blog content
 13. As a Site User I can search for a blog post so that I can quickly identify the post I want
 
+## Development planes
+### site aims
+The main aim for web development-the blog was to come out with a site where users can easily interact with the site, and other users as well. A community where one can easily create and share their own ideas as well as go through other people's ideas and share what they think through commenting. A platform where its easy for authors to  manage their own content through editing and deleting if they wish so.
+
+### Target audience
+1. Users
+2.  Admin
+3.  Demographic: Software developers or aspiring
+
+The site allows users to :
+- Register to set up their account
+- Edit their profile
+- Browse posts
+- Create their own posts
+- Edit and Delete their content
+- Comment on posts
+
+The site allows admin to :
+- have full control of the site.
+
+## Database schema
+
+
+
+## Wireframes
+![wireframe](media/images/Screenshot_26.png)
+
+![wireframe](media/images/Screenshot_27.png)
+
+![wireframe](media/images/Screenshot_28.png)
+
+### Color scheme
+ [Color hunt](https://colorhunt.co//) was used to select colors used for this project
+
+
+
+
+
+

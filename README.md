@@ -124,13 +124,33 @@ The site allows admin to :
 - users to reply to other comments
 - users to login with their social media accounts
 
-### Issues and bugs
+## Issues and bugs
 I encountered quite a number of issues and bugs during the development of the site, however some deserves to be noted
 - The first main issue I faced when I made my views, template and wired up the urls inorder to view the post detail, the page could not load and kept on getting no reverse match error. After wondering for hours on stack overflow I ended up contacting the tutor support. I needed to fix the link to the post with a primary key in the post detail page.
 ### Bugs
 - Unable to customise summenote fields' width and toolbar. I found a useful post in pp4 slack channel, that state I had to add summernote config in my settings.py, and edit desired settings.
 - I had used ckeditor as post editor as it was something very easy to understand. When I deployed the site to heroku, it could not load both on creat post and edit post page edit. Went through some few posts on stack overflow and realised I could not fix it as I feared some solutions would have made spend a lot of time. I had to revert back to summernote which I had been avoiding.
 - When I used the readtime library, I forgot to add it to the requirements.txt. Tried to deploy the site to heroku weeks later and could not even interpret the errors on my logs but thanks to Sean from tutor support who picked it in less than 2minutes
+
+## Technologies used
+- [HTML](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+- [CSS](https://www.w3schools.com/css/)
+- Python used to implement django functionality
+## Frameworks and libraries
+- [Django](https://www.djangoproject.com/) 
+  - is the backbone of this project used to build models, forms and views of the site
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+  - used to implement the responsiveness of the site, using bootstrap classes.
+- [Summernote](https://summernote.org/) 
+  - used to allow users to add styling when creating posts for the site. 
+- [Cloudinary](https://cloudinary.com/) 
+  - used as free cloud storage for images uploaded to the site
+- [readtime](https://stackoverflow.com/questions/43762694/how-to-add-post-content-reading-time-in-a-django-blog) 
+  - used to calculate how long it takes to read the post
+- [Google fonts](https://fonts.google.com/) 
+  - used for the fonts used on the site
+- [Git](https://git-scm.com/) 
+  - used for version control
 
 
 

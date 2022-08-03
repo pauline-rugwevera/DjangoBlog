@@ -194,6 +194,71 @@ I encountered quite a number of issues and bugs during the development of the si
   - used for version control
 
 ## Testing
+#### User stories
+1. As a Site User I can view a list of blog posts so that I can select one to read
+- Posts are easily visible, each with their clear title and easy to pick which one to read
+2. As a Site user I can view a paginated list of post so that I can select which post I want to view
+- Posts are paginated in rows of 3 and maximum of 6 posts per page and the rest will be pushed to the next page
+3. As a Site User I can click on a blog post so that I can view the entire blog 
+- After clicking post title, users can view the entire blog post including the author and date the post as made. If they are signed in they are allowed to comment.
+4. As a Site User / Admin I can view comments on an individual blog post so that I can read the conversation
+- Both site users signed in or not and the admin can go through comments. easy for the admin if they want to manage the converation.
+5. As a Site User I can register an account so that I can my own posts
+- Site users can register their account from the nav bar by putting their username, password and optional email inorder to have more benefits around the site like commenting, creating, editing and deleting their own content
+6. As a Site User I can leave comments on a post so that I can be involved in the conversation
+- signed in users can easily add in comments on any post
+7. As a Site User I can sign in and out of my account so that I can protect my account when I am not using it.
+- Users can sign in and protect their accounts by signing out from the navbar
+8. As a Site user I can login in my account and I can easily view and edit my profile
+- Users can update their Profile from the navbar if they wish to change, only if they are signed in
+9. As a Site User I can add a post so that I can share my ideas with other users
+- signed in users can create posts from the navbar in order to share their ideas
+10. As a Site user and author I can make changes to my own blog post so that I can update it
+- Only authors of a post are able to make changes or update their own posts as edit button appears only to them when signed in
+11. As a Site User and author I can delete my posts from the blog
+- authors of posts can easily delete their own content as the delete button only appears to them when signed in
+12. As an Admin I can create, read, update and delete posts so that I can manage my blog content
+- As the admin I have full control of the site and can easily manage my content. I can create posts but more importantly manages who posts what, manages comments as well.
+13. As a Site User I can search for a blog post so that I can quickly identify the post I want
+
+### Manual Testing
+- The navigation and footer appears on every page with the social links opening in a new page
+
+#### Page testing
+- When signed in create and profile links are presented to the navbar, login changes to logout
+- posts cards have clickable links that can take users to the post detail page
+- edit and delete button are presented to authenticated authors/users of that particular post
+- comments are easily read by any user, only signed in ones are able to leave comments
+- Create link takes user to create page where they create posts
+- logout works very as well when clicked, only logout changes to login and the create and profile links are removed from the navbar
+#### Automated testing
+ [W3C VALIDATOR](https://validator.w3.org/) was used to validate HTML and CSS. No issues
+
+ Python files were tested using Pep8 checker with no issues
+ - admin.py
+
+  ![admin](static/images/Screenshot_39.png)
+
+  - forms.py
+
+ ![forms](static/images/Screenshot_40.png)
+
+ - models.py
+
+ ![models](static/images/Screenshot_41.png)
+
+ - urls
+ ![urls](static/images/Screenshot_43.png)
+
+ - views.py
+
+ ![views](static/images/Screenshot_44.png)
+
+ - urls.py
+ ![urls](static/images/Screenshot_45.png)
+
+
+
 
 ## Deployment
 
@@ -232,6 +297,50 @@ The site was to deployed to heroku using the following steps
 11. In Gitpod terminal --> Add, Commit and Push
 
 12. Head over to Heroku, under Deploy tab , deploy manually
+
+## Credits
+#### Content
+- [MDN Web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+- [Jquery](https://jqueryui.com/)
+
+- [API](https://www.mulesoft.com/resources/api/what-is-an-api)
+
+- [Sql server](https://www.techonthenet.com/sql_server/index.php)
+
+- [Github](https://kinsta.com/knowledgebase/what-is-github/)
+
+#### Images
+- Pexels
+
+#### Code
+- https://web.dev/learn/css/
+
+- https://dev.to/earthcomfy/django-update-user-profile-33ho
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+- https://stackoverflow.com/
+
+- https://getbootstrap.com/
+
+- https://data-flair.training/blogs/django-blog-application-project/
+
+- https://www.youtube.com/watch?v=zb4fIvtn4tY
+
+- https://dev.to/
+
+- [Summernote](https://github.com/summernote/django-summernote)
+
+- I think therefore I can blog by Code institute
+
+- and probably some articles I used and might have forgot to reference due to pressure during site development
+
+## Acknowledgements
+- The tutor support helped me through difficult times
+- My mentor
+- The slack community
+
 
 
 

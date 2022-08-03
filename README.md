@@ -24,15 +24,22 @@ The main aim for web development-the blog was to come out with a site where user
 
 ### Target audience
 1. Users
+
 2.  Admin
+
 3.  Demographic: Software developers or aspiring
 
 The site allows users to :
 - Register to set up their account
+
 - Edit their profile
+
 - Browse posts
+
 - Create their own posts
+
 - Edit and Delete their content
+
 - Comment on posts
 
 The site allows admin to :
@@ -55,8 +62,11 @@ The site allows admin to :
 ## Features
 ### Landing page
 - First time users sees the page below. 
+
 - Navigation bar should users wish to access the site
+
 - Paginated list of posts users can browse through and read whether authenticated or not
+
 - The author of the post and time read for each post
 
 
@@ -64,15 +74,22 @@ The site allows admin to :
 
 ### Post detail page
 - When user clicks on particular post from the landing page, they are directed to the post where they can read the full post.
+
 - navigation bar still appears at the top
+
 - Post title appears at the top
+
 - The author and the date the post was made also shows
+
 - The image and the post detail follows
 
 ![post detail](static/images/Screenshot_31.png)
 - comment section
+
 - number of comments a particular post has
+
 - author of the comment and date the comment as made
+
 - However if the user is not signed in, they cannot share their thoughts through commenting. They are directed to login first
 ### Comments
 
@@ -81,61 +98,85 @@ The site allows admin to :
 ### Register
 
 - Users that need more advantages with the site they will have to register an account first
+
 - They need to register their username and password that need to be repeated to ensure it matches as well as the email which is optional.
 
 - Existing users can just login with their username and password
+
 #### register
+
 ![register](static/images/Screenshot_33.png)
 
 #### login
+
 ![login](static/images/Screenshot_34.png)
 
 ### Create
 - When a user registers and is signed in, they can create their own posts and add comments.
+
 - When signed the nav bar directs them on whatever they might wish to do.
+
 - From this point they can change their username if they wish so by clicking profile on the navbar
+
 - When creating a post, a user must add title, contents and image of the post, though they might forget a placeholder image will be added.
 
 ![create](static/images/Screenshot_35.png)
 
 ### Edit post
+
 - Users have the ability to update their own posts
+
 - This feature is only available to the signed in and author of that particular post
+
 - They can edit the title as well as the post detail and replace image.
 
 ![edit](static/images/Screenshot_36.png)
 
 ### Delete post
 - Users have the ability to delete their own posts
+
 - This feature is only available to the signed in and author of that particular post
+
 - in case they clicked the delete button by mistake, they can easily cancel the process
 
 ![delete](static/images/Screenshot_37.png)
 
 ### Logout
+
 - Finally users can protect their account by signing out when  they are done with the site
+
 - in case they clicked the logout by mistake, they can easily cancel the process
+
 ![logout](static/images/Screenshot_38.png)
 
 ## Future features
 - Ability for users to view author's profile. It was part of the original idea thats why the profile tab is on the navbar but could not finish to implement it in time
+
 - ability for users to save their favourite posts
+
 - users to delete their own comments
+
 - users to reply to other comments
+
 - users to login with their social media accounts
 
 ## Issues and bugs
 I encountered quite a number of issues and bugs during the development of the site, however some deserves to be noted
 - The first main issue I faced when I made my views, template and wired up the urls inorder to view the post detail, the page could not load and kept on getting no reverse match error. After wondering for hours on stack overflow I ended up contacting the tutor support. I needed to fix the link to the post with a primary key in the post detail page.
+
 ### Bugs
 - Unable to customise summenote fields' width and toolbar. I found a useful post in pp4 slack channel, that state I had to add summernote config in my settings.py, and edit desired settings.
+
 - I had used ckeditor as post editor as it was something very easy to understand. When I deployed the site to heroku, it could not load both on creat post and edit post page edit. Went through some few posts on stack overflow and realised I could not fix it as I feared some solutions would have made spend a lot of time. I had to revert back to summernote which I had been avoiding.
+
 - When I used the readtime library, I forgot to add it to the requirements.txt. Tried to deploy the site to heroku weeks later and could not even interpret the errors on my logs but thanks to Sean from tutor support who picked it in less than 2minutes
 
 ## Technologies used
+
 - [HTML](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
 - [CSS](https://www.w3schools.com/css/)
 - Python used to implement django functionality
+
 ## Frameworks and libraries
 - [Django](https://www.djangoproject.com/) 
   - is the backbone of this project used to build models, forms and views of the site
@@ -152,8 +193,45 @@ I encountered quite a number of issues and bugs during the development of the si
 - [Git](https://git-scm.com/) 
   - used for version control
 
+## Testing
 
+## Deployment
 
+The site was to deployed to heroku using the following steps
+- Create or sign in to heroku
+1. Create Heroku app by selecting 'Create new app', choose your app name and select location
+
+2. Select Postgres databases by navigating to Resourses tab, go to add-ons and type Postgres. select Heroku Postgres option
+
+3. Navigate to Settings tab, scroll down to convig vars and reveal then copy the DATABASE url
+
+4. Create envy.py file in the main directory and add the DATABASE url you copied on step 3, and your chosen SECRET_KEY
+
+5. Also add the SECRET_KEY to the Config Vars on heroku
+
+6. Import the env file and add SECRET_KEY and DATABASE_ URL file paths in settings.py
+
+7. Add Cloudinary url to Config vars in Heroku as well as the settings.py on gitpod
+
+8. Go to settings.py under INSTALLED_APPS add:
+
+- Cloudinary to the INSTALLED_APPS list
+- STATICFILE_STORAGE
+- STATICFILES_DIRS
+- STATIC_ROOT
+- MEDIA_URL
+- DEFAULT_FILE_STORAGE
+- TEMPLATES_DIR
+- Update DIRS in TEMPLATES with TEMPLATES_DIR
+- Update ALLOWED_HOSTS with ['app_name.heroku.com', 'localhost']
+
+9. Create 3 new folders: media, static and templates
+
+10. Create procfile and add code --> web: gunicorn PROJ_NAME.wsgi
+
+11. In Gitpod terminal --> Add, Commit and Push
+
+12. Head over to Heroku, under Deploy tab , deploy manually
 
 
 

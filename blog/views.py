@@ -8,60 +8,30 @@ from .forms import UpdateUserForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 
-from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
-
 
 class PostList(ListView):
+    """view to create the post on the blog"""
     model = BlogPost
     template_name = 'blog.html'
     ordering = ['-id']
     paginate_by = 6
 
 
-
-
 class Create(SuccessMessageMixin, CreateView):
+    """view to create the post on the blog"""
     model = BlogPost
-    
     form_class = BlogPostForm
     template_name = 'create.html'
     success_message = 'Your post has been successfully created'
 
-    # def form_valid(self, form):
-      
-
-
     def form_valid(self, form):
-
         user = self.request.user
         form.instance.author = user
         return super(Create, self).form_valid(form)
-        # obj = form.save(commit=False)
-        # obj.author = self.request.user
-        # return super().form_valid(form)
-
-
-
-
-# class Create(SuccessMessageMixin, CreateView):
-#     model = BlogPost
-    
-#     form_class = BlogPostForm
-#     template_name = 'create.html'
-#     success_message = 'Your post has been successfully created'
-
-    # def form_valid(self, form):
-    #     """
-    #     Called if all forms are valid. Creates a Recipe instance along with
-    #     associated Ingredients and Instructions and then redirects to a
-    #   homepage.
-    #     """
-    #     obj = form.save(commit=False)
-    #     obj.author = self.request.user
-    #     return super().form_valid(form)
 
 
 class UpdatePost(SuccessMessageMixin, UpdateView):
+    """view to edit the post on the blog"""
     model = BlogPost
     template_name = 'edit_post.html'
     form_class = EditPostForm
@@ -69,6 +39,7 @@ class UpdatePost(SuccessMessageMixin, UpdateView):
 
 
 class DeletePost(SuccessMessageMixin, DeleteView):
+    """view to delete the post on the blog"""
     model = BlogPost
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
@@ -80,6 +51,7 @@ class DeletePost(SuccessMessageMixin, DeleteView):
 
 
 def post_detail(request, slug):
+    """renders post detail"""
     post = BlogPost.objects.filter(slug=slug).first()
     comments = Comment.objects.filter(blog_id=post)
     if request.method == "POST":
@@ -91,18 +63,9 @@ def post_detail(request, slug):
                   {'post': post, 'comments': comments})
 
 
-def search(request):
-    if request.method == "POST":
-        searched = request.POST['searched']
-        post = BlogPost.objects.filter(title__icontains=searched)
-        return render(request, "search.html",
-                      {'searched': searched, 'post': post})
-    else:
-        return render(request, "search.html", {})
-
-
 @login_required
 def profile(request):
+    """create,update user profile"""
     profile = Profile.objects.get_or_create(user=request.user)
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
@@ -120,30 +83,3 @@ def profile(request):
 
     return render(request, 'profile.html', {'user_form': user_form,
                                             'profile_form': profile_form})
-
-
-# try out
-# def Create(request):
-#     """
-#     renders share a recipe page
-#     """
-#     recipe_form = CreateForm(request.POST or None, request.FILES or None)
-#     context = {
-#         'recipe_form': recipe_form,
-#     }
-
-#     if request.method == "POST":
-#         recipe_form = CreateForm(request.POST, request.FILES)
-#         if recipe_form.is_valid():
-#             print('valid')
-#             recipe_form.instance.author = request.user
-          
-#             recipe = recipe_form.save(commit=False)
-
-#             recipe.save()
-#             return redirect('/')
-#         else:
-#             print('invalid')
-#     else:
-#         recipe_form = CreateForm()
-#     return render(request, "creaate.html", context)

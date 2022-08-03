@@ -1,27 +1,18 @@
 {% extends 'base.html' %}
 
-
-<!-- tryout -->
 {% load static % }
 {% block content %}
 
 {% if searched %}
 <div class="col-lg-4 col-md-12 col-sm-12">
-  <!-- image url -->
+
   <div class="card shadow image-shadow">
   
-    
     <img src="{{ post.image.url }}" alt="post-image">
     
-    <!-- post title -->
-    <!-- <h5 class="card-title title">{{post.title}} -->
+   
       <br>
-      <!-- post author -->
      
-    <!-- </h5> -->
-    <!-- post content -->
-    <!-- <p class="contents">{{post.content| truncatechars:150|safe }}</p> -->
-  
      <a href="/blog/{{post.slug}}">
       <h2 class="card-title title ">{{ post.title }}</h2>
      </a>
@@ -40,6 +31,5 @@
       
       {% endif %}
 
-    
   </div>
   {% endblock %}

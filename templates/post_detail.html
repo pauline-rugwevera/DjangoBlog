@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
-
 {% load static % }
-
 {% block content %}
 
 <div class="container">
@@ -10,10 +8,8 @@
     <div class="media">
         <div class="media-body">
             <h5>{{post.author}} | {{ post.created_on }}
-
                 {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
-                <hr>
                 <a href="{% url 'update-post' post.pk %}" class="btn detailed-post btn">Edit Post</a>
                 <a href="{% url 'delete-post' post.pk %}" class="btn detailed-post btn">Delete Post</a>
                 {% endif %}
@@ -24,7 +20,6 @@
     </div>
     <br>
     <div class="border">
-
         <div id="image-container">
             {% if 'placeholder' in post.image.url %}
             <img src="https://res.cloudinary.com/dfvf6jlzb/image/upload/v1658332903/zckqp8ylve9ei8sza8pc.jpg"
@@ -42,7 +37,7 @@
         <form action="/blog/{{post.slug}}/" method="POST"> {% csrf_token %}
             <div class="form-floating">
                 <textarea class="form-control comments-textarea" rows="4" required placeholder="Leave a comment here"
-                    id="floatingTextarea2" id="content" name="content"></textarea>
+                    id="floatingTextarea2" name="content"></textarea>
                 <label for="floatingTextarea2">Leave a comment here.</label>
                 <br>
                 <button type="submit" class="btn comment-btn">Comment</button>
@@ -76,9 +71,11 @@
     {% if messages %}
     <div class="alert alert-success">
         {% for m in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ m }}</li>
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ m }}
+
+            </li>
             {% endfor %}
     </div>
     {% endif %}
-
-    {% endblock %}
+</div>
+{% endblock %}

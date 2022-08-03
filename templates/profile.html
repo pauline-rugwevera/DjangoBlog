@@ -1,9 +1,6 @@
 {% extends "base.html" %}
-
 {% block content %}
-
 <div class="container profile">
-
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-row my-profile">
@@ -27,6 +24,5 @@
     </form>
 
 </div>
-
 
 {% endblock %}

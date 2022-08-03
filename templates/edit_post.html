@@ -1,17 +1,13 @@
 {% extends 'base.html' %}
 {% load static % }
 {% block content %}
-
 <div class="container">
     <div class="form-group">
         <h2>Edit Post</h2>
         <hr>
-
         <form enctype="multipart/form-data" method="POST"> {% csrf_token %}
             <div class="container mt-4">
-                {{ form.media }}
                 {{ form.as_p }}
-                <!-- <button class="btn btn-primary">Edit post</button> -->
                 <button class="btn btn edit-post">Edit post</button>
             </div>
         </form>

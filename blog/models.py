@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
 from django.utils.timezone import now
-# from ckeditor.fields import RichTextField
 import readtime
 from django.template.defaultfilters import slugify
 

@@ -1,6 +1,4 @@
 from django.contrib import admin
-
-
 from .models import BlogPost, Comment, Profile
 from django_summernote.admin import SummernoteModelAdmin
 
@@ -13,5 +11,3 @@ admin.site.register(Profile)
 class BlogPostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content')
-
-

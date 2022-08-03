@@ -4,33 +4,38 @@ from django.contrib.auth.models import User
 from .models import BlogPost, Profile
 
 
-# class BlogPostForm(forms.ModelForm):
-#     class Meta:
-#         model = BlogPost
-#         fields = ('title', 'content', 'image')
-#         widgets = {
-#             'title': forms.TextInput
-#             (attrs={'class': 'form-control', 'placeholder':
-#                                              'Post Title'}),
-#             'content': forms.Textarea(attrs={'class': 'form-control',
-#                                              'placeholder': 'Post contents'}),
-#         }
+class BlogPostForm(forms.ModelForm):
+    """
+    Form class to add a post
+    """
+    class Meta:
+        model = BlogPost
+        fields = [
+            'title',
+            'content',
+            'image',
+        ]
+
+        widgets = {
+            'content': SummernoteWidget(),
+        }
 
 
-# class EditPostForm(forms.ModelForm):
-#     class Meta:
-#         model = BlogPost
-#         fields = ('title', 'content', 'image')
-#         widgets = {
-#             'title': forms.TextInput
-#             (attrs={'class': 'form-control',
-#                              'placeholder': 'Post Title'}),
-#             'content': forms.Textarea(attrs={'class': 'form-control',
-#                                              'placeholder': 'Post contents'}),
-#         }
+class EditPostForm(forms.ModelForm):
+    """
+    Form class to edit a post
+    """
+
+    class Meta:
+        model = BlogPost
+        fields = ('title', 'content', 'image')
+        widgets = {
+            'content': SummernoteWidget(),
+        }
 
 
 class UpdateUserForm(forms.ModelForm):
+    """Form class to update userprofile"""
     username = forms.CharField(max_length=100,
                                required=True,
                                widget=forms.TextInput
@@ -42,6 +47,7 @@ class UpdateUserForm(forms.ModelForm):
 
 
 class UpdateProfileForm(forms.ModelForm):
+    """Form class to update profile"""
     linkedin = forms.CharField(max_length=30,
                                required=False,
                                widget=forms.TextInput
@@ -52,36 +58,3 @@ class UpdateProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['linkedin', 'bio']
-
-
-class BlogPostForm(forms.ModelForm):
-    """
-    Form class to add a recipe
-    """
-    class Meta:
-        model = BlogPost
-        fields = [
-            'title',
-            
-    
-            'content',
-          
-            'image',
-        ]
-
-        widgets = {
-           
-            'content': SummernoteWidget(),
-              
-        }
-
-class EditPostForm(forms.ModelForm):
-    class Meta:
-        model = BlogPost
-        fields = ('title', 'content', 'image')
-        widgets = {
-            'content': SummernoteWidget(),
-          
-        }
-
-  

@@ -7,13 +7,21 @@
     <br>
     <div class="media">
         <div class="media-body">
-            <h5>{{post.author}} | {{ post.created_on }}
+            <h5 id="author-media">{{post.author}} | {{ post.created_on }}
+              <hr>
                 {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
+    
                 <a href="{% url 'update-post' post.pk %}" class="btn detailed-post btn">Edit Post</a>
+               
                 <a href="{% url 'delete-post' post.pk %}" class="btn detailed-post btn">Delete Post</a>
                 {% endif %}
                 {% endif %}
+             
+                
+
+                
+
             </h5>
 
         </div>
@@ -28,7 +36,7 @@
             <img src="{{ post.image.url }}" alt="post-image">
             {% endif %}
         </div>
-        <p>{{ post.content|safe }}.</p>
+        <p>{{ post.content|safe }}</p>
     </div>
     <hr>
     {% if user.is_authenticated %}
@@ -38,7 +46,7 @@
             <div class="form-floating">
                 <textarea class="form-control comments-textarea" rows="4" required placeholder="Leave a comment here"
                     id="floatingTextarea2" name="content"></textarea>
-                <label for="floatingTextarea2">Leave a comment here.</label>
+                <label for="floatingTextarea2">Leave a comment here</label>
                 <br>
                 <button type="submit" class="btn comment-btn">Comment</button>
             </div>

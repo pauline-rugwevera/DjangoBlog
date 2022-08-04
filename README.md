@@ -1,4 +1,5 @@
 # Web development-the blog
+![main image](static/images/Screenshot_53.png)
 # Introduction
 Web development is my 4th project I did with Code Institute. The requiremenrs for this project was to build a Full Stack site that required me to set up an authentication system that provide a role-based access to the site's data. Web development-the blog is a public community blog platform where users can interact with other users' posts. Authenticated users have more advantages as they can create and share their web development posts with other users.
 

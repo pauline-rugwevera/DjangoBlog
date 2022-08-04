@@ -7,13 +7,15 @@ body {
   color: #371B58;
   background-color: #F0EBE3;
   display: flex;
-  flex-direction: column; /* creates rows out of the elements main and footer */
-  height: 100vh; 
-  margin:0;
-
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
 
 }
 
+.navbar-colour {
+  background-color: #FFFFFF;
+}
 
 
 .border {
@@ -28,18 +30,8 @@ body {
   font-size: 23px;
 }
 
-.toggle {
-  color: black;
-}
-
-.black {
-  color: #000;
-}
-
-
 .image-shadow {
   width: 18rem;
- 
   height: 19rem;
   margin-top: 0;
   background-color: #371B58
@@ -64,27 +56,14 @@ body {
   margin-top: 10px;
 }
 
-.home {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-  width: 50%;
-  margin-bottom: 7px;
-  padding: 7px;
-  margin-left: 9px;
 
-}
-
-#create-post {
+#create-post,
+#edit-header {
   margin-left: 24px;
+  padding-top: 10px;
 
 }
 
-
-.contents {
-  padding: 1px;
-  margin-top: 2px;
-
-}
 
 .next,
 .previous {
@@ -95,16 +74,6 @@ body {
 
 }
 
-
-.edit {
-  margin-right: 0;
-}
-
-.colour {
-  background-color: #FFFFFF;
-  color: #000;
-
-}
 
 a {
   font-family: 'Lato', sans-serif;
@@ -139,16 +108,13 @@ h5 {
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
 }
-#signing-in,#register-here{
+
+#signing-in,
+#register-here {
   padding-left: 10px;
   padding-top: 10px;
   font-weight: bold;
 }
-
-.login {
-  font-family: 'Open Sans', sans-serif;
-}
-
 
 #logout,
 #register,
@@ -162,8 +128,6 @@ h5 {
 
 }
 
-
-
 #delete {
   display: flex;
   justify-content: center;
@@ -172,17 +136,18 @@ h5 {
 #delete-header {
   font-family: 'Open Sans', sans-serif;
   font-size: 35px;
+  padding-top: 9px;
 }
 
 .detailed-post,
 .edit-post,
 .comment-btn,
-.create-btn,
 .update-profile,
-.cancel-btn,
+.cancel,
 .logout,
 .login-btn,
 .sign-up,
+.create-btn,
 .login-direct,
 .cancel-logout,
 .delete-btn {
@@ -206,14 +171,12 @@ h5 {
   padding-left: 11px;
 }
 
-.cancel {
+.cancel,
+.cancel-logout {
   font-family: 'Lato', sans-serif;
   margin-left: 15px;
 }
 
-.white {
-  color: #FFFFFF;
-}
 
 .footer-p {
   font-family: 'Lato', sans-serif;
@@ -257,15 +220,9 @@ h5 {
 
 }
 
-.comments-textarea {
-  height: 200px;
-}
-
 .date-time {
   font-size: 12px;
 }
-
-
 
 /* media queries */
 
@@ -347,26 +304,29 @@ h5 {
     height: 160px;
   }
 
-.profile{
-  width: 54vh;
-  min-height: calc(70vh - 40px)
- 
-}
+  .profile {
+    width: 54vh;
+    min-height: calc(70vh - 40px)
+  }
 
-.footer{
-  padding: 0;
-  height: 94px;
-}
-.footer-p{
-  margin: 0;
-  padding: 4px;
+  .footer {
+    padding: 0;
+    height: 94px;
+  }
 
-}
-.sign-up,.login-btn{
- margin-bottom: 6px;
- margin-left: 9px;
-}
-#author-media{
-  font-size: 16px;
-}
+  .footer-p {
+    margin: 0;
+    padding: 4px;
+
+  }
+
+  .sign-up,
+  .login-btn {
+    margin-bottom: 6px;
+    margin-left: 9px;
+  }
+
+  #author-media {
+    font-size: 16px;
+  }
 }

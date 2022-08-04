@@ -8,19 +8,13 @@
     <div class="media">
         <div class="media-body">
             <h5 id="author-media">{{post.author}} | {{ post.created_on }}
-              <hr>
+                <hr>
                 {% if user.is_authenticated %}
                 {% if user.id == post.author.id %}
-    
-                <a href="{% url 'update-post' post.pk %}" class="btn detailed-post btn">Edit Post</a>
-               
-                <a href="{% url 'delete-post' post.pk %}" class="btn detailed-post btn">Delete Post</a>
+                <a href="{% url 'update-post' post.pk %}" class="btn detailed-post">Edit Post</a>
+                <a href="{% url 'delete-post' post.pk %}" class="btn detailed-post">Delete Post</a>
                 {% endif %}
                 {% endif %}
-             
-                
-
-                
 
             </h5>
 
@@ -28,7 +22,7 @@
     </div>
     <br>
     <div class="border">
-        <div id="image-container">
+        <div>
             {% if 'placeholder' in post.image.url %}
             <img src="https://res.cloudinary.com/dfvf6jlzb/image/upload/v1658332903/zckqp8ylve9ei8sza8pc.jpg"
                 alt="full-stack placeholder">
@@ -44,7 +38,7 @@
         <h2>Add Comments Here</h2>
         <form action="/blog/{{post.slug}}/" method="POST"> {% csrf_token %}
             <div class="form-floating">
-                <textarea class="form-control comments-textarea" rows="4" required placeholder="Leave a comment here"
+                <textarea class="form-control" rows="4" required placeholder="Leave a comment here"
                     id="floatingTextarea2" name="content"></textarea>
                 <label for="floatingTextarea2">Leave a comment here</label>
                 <br>

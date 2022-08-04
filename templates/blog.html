@@ -14,6 +14,7 @@
         <img src="{{ post.image.url }}" alt="post-image">
         {% endif %}
         <br>
+
         <a href="{% url 'post-detail' post.slug %}">
           <h2 class="card-title title ">{{ post.title }}</h2>
         </a>
@@ -28,21 +29,20 @@
 
     {% endfor %}
   </div>
+  <br>
 
+  {% if is_paginated %}
+  <nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center ">
+      {% if page_obj.has_previous %}
+      <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link btn previous">&laquo; prev </a></li>
+      {% endif %}
+      {% if page_obj.has_next %}
+      <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn next"> Next &raquo;</a></li>
+
+      {% endif %}
+    </ul>
+  </nav>
+  {% endif %}
 </div>
-
-{% if is_paginated %}
-<nav aria-label="Page navigation">
-  <ul class="pagination justify-content-center ">
-    {% if page_obj.has_previous %}
-    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link btn previous">&laquo; prev </a></li>
-    {% endif %}
-    {% if page_obj.has_next %}
-    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn next"> Next &raquo;</a></li>
-
-    {% endif %}
-  </ul>
-</nav>
-{% endif %}
-
 {% endblock  %}

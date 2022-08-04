@@ -47,6 +47,7 @@ The site allows admin to :
 
 ## Structure
 This is a simple chart I made to remind me of what I needed to put in place and what a user can do signed in or signed out
+
 ![structure](static/images/Screenshot_51.png)
 
 ## Database schema
@@ -340,6 +341,8 @@ The site was to deployed to heroku using the following steps
 - https://dev.to/
 
 - [Summernote](https://github.com/summernote/django-summernote)
+
+- [Freecode camp](https://www.freecodecamp.org/)
 
 - I think therefore I can blog by Code institute
 

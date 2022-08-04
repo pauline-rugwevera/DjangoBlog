@@ -6,11 +6,15 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #371B58;
   background-color: #F0EBE3;
+  display: flex;
+  flex-direction: column; /* creates rows out of the elements main and footer */
+  height: 100vh; 
+  margin:0;
+
+
 }
 
-#recipe {
-  width: 100%;
-}
+
 
 .border {
   border-style: ridge;
@@ -133,32 +137,30 @@ h5 {
   font-family: 'Open Sans', sans-serif;
   font-size: 22px;
 }
+#signing-in,#register-here{
+  padding-left: 10px;
+  padding-top: 10px;
+  font-weight: bold;
+}
 
 .login {
   font-family: 'Open Sans', sans-serif;
 }
 
-#login,
+
 #logout,
 #register,
 #delete,
-#search,
-#profile,
-#edit-profile {
+.profile,
+#login {
   position: relative;
   width: 100vw;
-  min-height: calc(72vh - 40px);
+  min-height: calc(83vh - 40px);
   bottom: 0;
 
 }
 
-.profile {
-  min-height: calc(80vh - 40px);
-}
 
-#logout {
-  min-height: calc(76vh - 40px);
-}
 
 #delete {
   display: flex;
@@ -169,7 +171,6 @@ h5 {
   font-family: 'Open Sans', sans-serif;
   font-size: 35px;
 }
-
 
 .detailed-post,
 .edit-post,
@@ -196,9 +197,11 @@ h5 {
   color: #AE8141;
 }
 
-#log-out {
+#sign-out {
   font-family: 'Open Sans', sans-serif;
   font-size: 35px;
+  padding-top: 5px;
+  padding-left: 11px;
 }
 
 .cancel {
@@ -225,9 +228,10 @@ h5 {
   text-align: center;
   font-size: 20px;
   position: relative;
-  height: 92px;
+  height: 150px;
+  margin-top: 0;
   color: #B28649;
-  padding: 2px;
+  padding: 13px;
 }
 
 .social-links {
@@ -339,4 +343,23 @@ h5 {
   img {
     height: 160px;
   }
+
+.profile{
+  width: 54vh;
+  min-height: calc(70vh - 40px)
+ 
+}
+
+.footer{
+  padding: 0;
+  height: 94px;
+}
+.footer-p{
+  margin: 0;
+  padding: 4px;
+
+}
+.sign-up,.login-btn{
+ margin-bottom: 6px;
+ margin-left: 9px;
 }

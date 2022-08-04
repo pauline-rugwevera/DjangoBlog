@@ -8,9 +8,9 @@
 {% block content %}
 
 <div id="login" class="container">
-  <div  class="row justify-content-md-center">
+  <div class="row justify-content-md-center">
     <div class="col-md-auto">
-      <h3>{% trans "Login into your account" %}</h3>
+      <h3 id="signing-in">{% trans "Sign in" %}</h3>
 
       <p>{% blocktrans %}If you have not created an account yet, then please
         <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
@@ -20,7 +20,7 @@
         {{ form.as_p }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        
+
         {% endif %}
         <button class="btn login-btn" type="submit">{% trans "Sign In" %}</button>
       </form>

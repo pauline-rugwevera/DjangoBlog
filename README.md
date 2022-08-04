@@ -45,7 +45,16 @@ The site allows users to :
 The site allows admin to :
 - have full control of the site.
 
+## Structure
+This is a simple chart I made to remind me of what I needed to put in place and what a user can do signed in or signed out
+![structure](static/images/Screenshot_51.png)
+
 ## Database schema
+
+As per profile model, the original idea was to make users make their own profile that can be viewed by other users. I also later added extra fields to BlogPost and Comment models which are  created_on and dateTime respectively
+
+![database schema](static/images/Screenshot_49.png)
+
 
 
 

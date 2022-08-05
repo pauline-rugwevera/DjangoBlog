@@ -3,6 +3,8 @@
 # Introduction
 Web development is my 4th project I did with Code Institute. The requiremenrs for this project was to build a Full Stack site that required me to set up an authentication system that provide a role-based access to the site's data. Web development-the blog is a public community blog platform where users can interact with other users' posts. Authenticated users have more advantages as they can create and share their web development posts with other users.
 
+[Link to deployed project](https://webdev-django-blog.herokuapp.com/)
+
 # UX
 ## User stories
 1. As a Site User I can view a list of blog posts so that I can select one to read
@@ -17,7 +19,6 @@ Web development is my 4th project I did with Code Institute. The requiremenrs fo
 10. As a Site user and author I can make changes to my own blog post so that I can update it
 11. As a Site User and author I can delete my posts from the blog
 12. As an Admin I can create, read, update and delete posts so that I can manage my blog content
-13. As a Site User I can search for a blog post so that I can quickly identify the post I want
 
 ## Development planes
 ### site aims
@@ -56,8 +57,6 @@ This is a simple chart I made to remind me of what I needed to put in place and 
 As per profile model, the original idea was to make users make their own profile that can be viewed by other users. I also later added extra fields to BlogPost and Comment models which are  created_on and dateTime respectively
 
 ![database schema](static/images/Screenshot_49.png)
-
-
 
 
 ## Wireframes
@@ -230,18 +229,24 @@ I encountered quite a number of issues and bugs during the development of the si
 - authors of posts can easily delete their own content as the delete button only appears to them when signed in
 12. As an Admin I can create, read, update and delete posts so that I can manage my blog content
 - As the admin I have full control of the site and can easily manage my content. I can create posts but more importantly manages who posts what, manages comments as well.
-13. As a Site User I can search for a blog post so that I can quickly identify the post I want
+
 
 ### Manual Testing
 - The navigation and footer appears on every page with the social links opening in a new page
 
 #### Page testing
 - When signed in create and profile links are presented to the navbar, login changes to logout
+
 - posts cards have clickable links that can take users to the post detail page
+
 - edit and delete button are presented to authenticated authors/users of that particular post
+
 - comments are easily read by any user, only signed in ones are able to leave comments
+
 - Create link takes user to create page where they create posts
+
 - logout works very as well when clicked, only logout changes to login and the create and profile links are removed from the navbar
+
 #### Automated testing
  [W3C VALIDATOR](https://validator.w3.org/) was used to validate HTML and CSS. No issues
 
@@ -267,8 +272,6 @@ I encountered quite a number of issues and bugs during the development of the si
 
  - urls.py
  ![urls](static/images/Screenshot_45.png)
-
-
 
 
 ## Deployment
